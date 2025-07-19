@@ -1,39 +1,61 @@
-      {/* Achievements & Experience Section */}
-      <section className="vw-section vw-achievements-section">
-        <h2>Achievements & Experience</h2>
-        <ul className="vw-achievements-list">
-          <li>
-            <strong>OJT at STMicroelectronics Calamba (324 hours):</strong> Contributed to real-world projects in semiconductor operations and system automation under the New Product Introduction (NPI) department.
-          </li>
-          <li>
-            <strong>Internal EIC System:</strong> Developed and deployed an Electronic Inspection Checklist for digital quality control in the NPI line.
-          </li>
-          <li>
-            <strong>Web-based SQL Automation:</strong> Built a secure platform for material tracking and query submission in semiconductor manufacturing.
-          </li>
-          <li>
-            <strong>Security & IRM:</strong> Participated in terminal password configuration and Information Rights Management setup for secure access and digital rights protocols.
-          </li>
-          <li>
-            <strong>Failure Analysis:</strong> Conducted hands-on inspections using Keyence VHX-7000 and Olympus MX51 equipment.
-          </li>
-          <li>
-            <strong>AINA AI System:</strong> Co-developed and documented an AI-powered system integrating ML, NLP, and voice interface for health guidance and automation.
-          </li>
-          <li>
-            <strong>Industry Seminars:</strong> Attended <em>Microsoft Season of AI Season of Agents (Season 4)</em> and <em>Modern Technologies: Shaping the Future of Software Development and IT Operations</em>.
-          </li>
-          <li>
-            <strong>Academic Honors:</strong> Graduated with High Honors from Mapúa Malayan Colleges Laguna (Senior High School).
-          </li>
-          <li>
-            <strong>Leadership:</strong> Treasurer, Junior Philippine Computer Society (JPCS) MCL Chapter.
-          </li>
-          <li>
-            <strong>Esports:</strong> Former player for the Warlocks, Mapúa MCL esports team, representing the school in competitive gaming events.
-          </li>
-        </ul>
+import React, { useState } from 'react';
+import './App.css';
+
+function ContactForm() {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Message from ${form.name || 'Portfolio Visitor'}`);
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
+    window.location.href = `mailto:vlnuevaespana@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  return (
+    <form className="vw-contact-form" onSubmit={handleSubmit} style={{maxWidth: 500, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.2rem'}}>
+      <label>
+        Name
+        <input type="text" name="name" value={form.name} onChange={handleChange} required className="vw-input" />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" value={form.email} onChange={handleChange} required className="vw-input" />
+      </label>
+      <label>
+        Write your message here
+        <textarea name="message" value={form.message} onChange={handleChange} required className="vw-input" rows={5} />
+      </label>
+      <button type="submit" className="vw-btn">Send Message</button>
+    </form>
+  );
+}
+
+function App() {
+  return (
+    <div className="vaporwave-bg">
+      {/* Hero Section */}
+      <section className="vw-hero">
+        <div className="vw-hero-content">
+          <div className="vw-hero-avatar">
+            <span role="img" aria-label="avatar" className="vw-hero-avatar-emoji">🦄</span>
+          </div>
+          <h1 className="vw-hero-title">Vincent</h1>
+          <p className="vw-hero-tagline">Computer Science & Data Analyst</p>
+          <div className="vw-hero-nav">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <a href="#get-in-touch">Get in Touch</a>
+          </div>
+        </div>
+        <div className="vw-hero-bg-anim"></div>
       </section>
+      {/* ...existing code... */}
       {/* Contact Section */}
       <section id="contact" className="vw-section vw-contact-section">
         <h2>Contact</h2>
@@ -158,39 +180,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-// ContactForm component for sending email via mailto
-function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Message from ${form.name || 'Portfolio Visitor'}`);
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
-    window.location.href = `mailto:vlnuevaespana@gmail.com?subject=${subject}&body=${body}`;
-  };
-
-  return (
-    <form className="vw-contact-form" onSubmit={handleSubmit} style={{maxWidth: 500, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.2rem'}}>
-      <label>
-        Name
-        <input type="text" name="name" value={form.name} onChange={handleChange} required className="vw-input" />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" value={form.email} onChange={handleChange} required className="vw-input" />
-      </label>
-      <label>
-        Write your message here
-        <textarea name="message" value={form.message} onChange={handleChange} required className="vw-input" rows={5} />
-      </label>
-      <button type="submit" className="vw-btn">Send Message</button>
-    </form>
-  );
-}
+// ...existing code...
 
 function App() {
   return (
@@ -266,7 +256,7 @@ function App() {
           </li>
           <li>
             <strong>Esports:</strong> Former player for the Warlocks, Mapúa MCL esports team, representing the school in competitive gaming events.
-          </li>
+          </li>S
         </ul>
       </section>
 
@@ -325,42 +315,6 @@ function App() {
         <h2>Get in Touch</h2>
         <ContactForm />
       </section>
-
-// ContactForm component for sending email via mailto
-import React, { useState } from 'react';
-
-function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Message from ${form.name || 'Portfolio Visitor'}`);
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
-    window.location.href = `mailto:vlnuevaespana@gmail.com?subject=${subject}&body=${body}`;
-  };
-
-  return (
-    <form className="vw-contact-form" onSubmit={handleSubmit} style={{maxWidth: 500, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.2rem'}}>
-      <label>
-        Name
-        <input type="text" name="name" value={form.name} onChange={handleChange} required className="vw-input" />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" value={form.email} onChange={handleChange} required className="vw-input" />
-      </label>
-      <label>
-        Write your message here
-        <textarea name="message" value={form.message} onChange={handleChange} required className="vw-input" rows={5} />
-      </label>
-      <button type="submit" className="vw-btn">Send Message</button>
-    </form>
-  );
-}
     </div>
   );
 }
