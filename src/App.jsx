@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 
 // Contact form component
@@ -36,12 +36,36 @@ function ContactForm() {
   );
 }
 
-// Main App component
+// Fade-in section reveal using Intersection Observer
+function FadeInSection({ children, className = '', ...props }) {
+  const ref = useRef();
+  const [isVisible, setVisible] = useState(false);
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <section
+      ref={ref}
+      className={`fade-in-section${isVisible ? ' visible' : ''} ${className}`.trim()}
+      {...props}
+    >
+      {children}
+    </section>
+  );
+}
+
 function App() {
   return (
     <div className="vaporwave-bg">
       {/* Hero Section */}
-      <section className="vw-hero">
+      <FadeInSection className="vw-hero">
         <div className="vw-hero-content">
           <div className="vw-hero-avatar">
             <span role="img" aria-label="avatar" className="vw-hero-avatar-emoji">🦄</span>
@@ -57,10 +81,10 @@ function App() {
           </div>
         </div>
         <div className="vw-hero-bg-anim"></div>
-      </section>
+      </FadeInSection>
 
       {/* About Section */}
-      <section id="about" className="vw-section vw-about">
+      <FadeInSection id="about" className="vw-section vw-about">
         <div className="vw-about-content">
           <div className="vw-about-text" style={{ width: '100%' }}>
             <h2>About Me</h2>
@@ -78,7 +102,7 @@ function App() {
       </section>
 
       {/* Achievements & Experience Section */}
-      <section className="vw-section vw-achievements-section">
+      <FadeInSection className="vw-section vw-achievements-section">
         <h2>Achievements & Experience</h2>
         <ul className="vw-achievements-list">
           <li>
@@ -112,10 +136,10 @@ function App() {
             <strong>Esports:</strong> Former player for the Warlocks, Mapúa MCL esports team, representing the school in competitive gaming events.
           </li>
         </ul>
-      </section>
+      </FadeInSection>
 
       {/* Contact Section */}
-      <section id="contact" className="vw-section vw-contact-section">
+      <FadeInSection id="contact" className="vw-section vw-contact-section">
         <h2>Contact</h2>
         <div className="vw-contact-list">
           <div className="vw-contact-item">
@@ -127,10 +151,10 @@ function App() {
             <a href="https://www.linkedin.com/in/vincent-luis-nueva-espa%C3%B1a-955085325/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* Projects Section */}
-      <section id="projects" className="vw-section vw-projects-section">
+      <FadeInSection id="projects" className="vw-section vw-projects-section">
         <h2>Projects</h2>
         <div className="vw-projects-list">
           <div className="vw-project-card">
@@ -154,10 +178,10 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* Skills Section */}
-      <section id="skills" className="vw-section vw-skills-section">
+      <FadeInSection id="skills" className="vw-section vw-skills-section">
         <h2>Skills</h2>
         <div className="vw-skills-categories">
           <div className="vw-skill-category">
@@ -233,13 +257,13 @@ function App() {
             </ul>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* Get in Touch Section */}
-      <section id="get-in-touch" className="vw-section vw-contact-section">
+      <FadeInSection id="get-in-touch" className="vw-section vw-contact-section">
         <h2>Get in Touch</h2>
         <ContactForm />
-      </section>
+      </FadeInSection>
     </div>
   );
 }
