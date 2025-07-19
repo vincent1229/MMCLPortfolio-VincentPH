@@ -1,3 +1,361 @@
+/* --- Modern Vaporwave Portfolio Enhancements --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&family=VT323&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body, .vaporwave-bg {
+  font-family: 'Orbitron', 'Press Start 2P', 'VT323', monospace, sans-serif;
+  background: linear-gradient(120deg, #ff71ce 0%, #b967ff 50%, #01cdfe 100%);
+  min-height: 100vh;
+  color: #111;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Glassmorphic Sticky Navbar */
+.vw-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 2px solid #ff71ce44;
+  box-shadow: 0 2px 24px 0 #b967ff33;
+  border-radius: 0 0 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.vw-navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+}
+.vw-navbar-logo {
+  font-family: 'Orbitron', 'VT323', monospace;
+  font-size: 1.5rem;
+  color: #ff71ce;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #ff71ce, 0 0 2px #fff;
+}
+.vw-navbar-links a {
+  color: #fff;
+  font-weight: 700;
+  margin-left: 2rem;
+  text-decoration: none;
+  position: relative;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.vw-navbar-links a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #ff71ce, #b967ff, #01cdfe);
+  transition: width 0.3s cubic-bezier(.4,0,.2,1);
+  border-radius: 2px;
+  margin-top: 2px;
+}
+.vw-navbar-links a:hover {
+  color: #01cdfe;
+  text-shadow: 0 0 8px #01cdfe, 0 0 2px #fff;
+}
+.vw-navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section Modernization */
+.vw-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: none;
+}
+.vw-hero-bg-anim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: repeating-linear-gradient(135deg, #ff71ce22 0 2px, transparent 2px 40px), repeating-linear-gradient(225deg, #01cdfe22 0 2px, transparent 2px 40px);
+  opacity: 0.7;
+  pointer-events: none;
+  animation: grid-move 12s linear infinite;
+}
+@keyframes grid-move {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 80px 80px, -80px -80px; }
+}
+.vw-hero-content {
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1rem 3rem 1rem;
+}
+.vw-hero-avatar.floating {
+  animation: float 3.5s ease-in-out infinite;
+  margin-bottom: 1.2rem;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+.vw-hero-title {
+  font-family: 'Orbitron', 'VT323', monospace;
+  font-size: 3.2rem;
+  color: #fff;
+  letter-spacing: 4px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 16px #b967ff, 0 0 2px #fff;
+  position: relative;
+  animation: fadeIn 1.2s cubic-bezier(.4,0,.2,1);
+}
+.vw-hero-title.glitch {
+  animation: glitch 1.5s infinite alternate-reverse;
+}
+@keyframes glitch {
+  0% { text-shadow: 2px 0 #ff71ce, -2px 0 #01cdfe; }
+  20% { text-shadow: -2px 0 #b967ff, 2px 2px #01cdfe; }
+  40% { text-shadow: 2px -2px #ff71ce, -2px 2px #b967ff; }
+  60% { text-shadow: 0 2px #01cdfe, 2px 0 #ff71ce; }
+  80% { text-shadow: -2px -2px #b967ff, 2px 2px #ff71ce; }
+  100% { text-shadow: 2px 0 #ff71ce, -2px 0 #01cdfe; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.vw-hero-tagline {
+  color: #01cdfe;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px #01cdfe, 0 0 2px #fff;
+}
+
+/* Section Reveal Animations (Framer Motion) */
+.vw-section {
+  margin: 3.5rem auto 2.5rem auto;
+  max-width: 1100px;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1.5rem;
+  background: rgba(255,255,255,0.13);
+  box-shadow: 0 4px 32px 0 #b967ff22, 0 0 0 2px #ff71ce22;
+  backdrop-filter: blur(8px) saturate(160%);
+  border: 1.5px solid #ff71ce33;
+  position: relative;
+  transition: box-shadow 0.3s;
+}
+.vw-section:hover {
+  box-shadow: 0 8px 48px 0 #01cdfe44, 0 0 0 2px #b967ff44;
+}
+
+/* Project Cards Modernization */
+.vw-projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.vw-project-card {
+  background: rgba(255,255,255,0.18);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 24px 0 #b967ff33, 0 0 0 2px #ff71ce33;
+  border: 1.5px solid #b967ff44;
+  padding: 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.vw-project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 48px 0 #01cdfe55, 0 0 0 2px #ff71ce55;
+}
+.vw-project-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 12px #b967ff88);
+}
+.vw-project-info h3 {
+  color: #ff71ce;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Orbitron', 'VT323', monospace;
+}
+.vw-project-tags {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.vw-project-tags span {
+  background: linear-gradient(90deg, #ff71ce, #b967ff, #01cdfe);
+  color: #fff;
+  font-size: 0.85rem;
+  border-radius: 0.7rem;
+  padding: 0.2rem 0.8rem;
+  font-family: 'VT323', monospace;
+  box-shadow: 0 0 8px #b967ff44;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
+.vw-project-card:hover .vw-project-tags span {
+  background: linear-gradient(90deg, #01cdfe, #b967ff, #ff71ce);
+}
+
+/* Skills Section: Neon Animated Bars */
+.vw-skills-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.vw-skill-category h3 {
+  color: #b967ff;
+  font-family: 'Orbitron', 'VT323', monospace;
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+.vw-skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vw-skill-list li {
+  margin-bottom: 0.5rem;
+  color: #222;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+.vw-skill-list li span[role="img"] {
+  font-size: 1.2em;
+}
+
+/* Contact Form Modernization */
+.vw-contact-form {
+  background: rgba(255,255,255,0.18);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 24px 0 #b967ff33, 0 0 0 2px #ff71ce33;
+  border: 1.5px solid #b967ff44;
+  padding: 2rem 1.5rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.vw-contact-form label {
+  color: #b967ff;
+  font-family: 'Orbitron', 'VT323', monospace;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+.vw-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  border: 1.5px solid #ff71ce88;
+  background: rgba(255,255,255,0.22);
+  color: #111;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.7rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 0 0 #ff71ce44;
+}
+.vw-input:focus {
+  border: 1.5px solid #01cdfe;
+  box-shadow: 0 0 8px #01cdfe44;
+}
+.vw-btn {
+  background: linear-gradient(90deg, #ff71ce, #b967ff, #01cdfe);
+  color: #fff;
+  font-family: 'Orbitron', 'VT323', monospace;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.7rem 2.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 16px #b967ff55;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  position: relative;
+  overflow: hidden;
+}
+.vw-btn:hover {
+  background: linear-gradient(90deg, #01cdfe, #b967ff, #ff71ce);
+  box-shadow: 0 0 32px #01cdfe88;
+  transform: scale(1.04);
+}
+
+/* Contact List Modernization */
+.vw-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+.vw-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: #222;
+}
+.vw-contact-item a {
+  color: #01cdfe;
+  text-decoration: underline;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+.vw-contact-item a:hover {
+  color: #ff71ce;
+}
+
+/* Glassmorphism/Noise Overlay */
+.vaporwave-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .vw-navbar-content {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.5rem 0.7rem;
+  }
+  .vw-navbar-links a {
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+  .vw-section {
+    padding: 1.2rem 0.5rem;
+  }
+  .vw-projects-list {
+    grid-template-columns: 1fr;
+  }
+  .vw-skills-categories {
+    grid-template-columns: 1fr;
+  }
+}
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&family=VT323&display=swap');
 
 /* Vaporwave color variables */

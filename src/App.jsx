@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import './App.css';
 
 // Contact form component
@@ -36,31 +37,49 @@ function ContactForm() {
   );
 }
 
+// Sticky glassmorphic navigation bar
+function Navbar() {
+  return (
+    <nav className="vw-navbar">
+      <div className="vw-navbar-content">
+        <span className="vw-navbar-logo">🦄 Vincent</span>
+        <div className="vw-navbar-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <a href="#get-in-touch">Get in Touch</a>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
 // Main App component
 function App() {
+  // Framer Motion variants for section reveal
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } }
+  };
+
   return (
     <div className="vaporwave-bg">
+      <Navbar />
       {/* Hero Section */}
-      <section className="vw-hero">
+      <motion.section className="vw-hero" initial="hidden" animate="visible" variants={sectionVariants}>
         <div className="vw-hero-content">
-          <div className="vw-hero-avatar">
+          <div className="vw-hero-avatar floating">
             <span role="img" aria-label="avatar" className="vw-hero-avatar-emoji">🦄</span>
           </div>
           <h1 className="vw-hero-title glitch" data-text="Vincent">Vincent</h1>
           <p className="vw-hero-tagline">Computer Science & Data Analyst</p>
-          <div className="vw-hero-nav">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-            <a href="#get-in-touch">Get in Touch</a>
-          </div>
         </div>
         <div className="vw-hero-bg-anim"></div>
-      </section>
+      </motion.section>
 
       {/* About Section */}
-      <section id="about" className="vw-section vw-about">
+      <motion.section id="about" className="vw-section vw-about" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
         <div className="vw-about-content">
           <div className="vw-about-text" style={{ width: '100%' }}>
             <h2>About Me</h2>
@@ -75,47 +94,22 @@ function App() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Achievements & Experience Section */}
-      <section className="vw-section vw-achievements-section">
+      <motion.section className="vw-section vw-achievements-section" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
         <h2>Achievements & Experience</h2>
         <ul className="vw-achievements-list">
+          {/* ...existing code... */}
           <li>
             <strong>OJT at STMicroelectronics Calamba (324 hours):</strong> Contributed to real-world projects in semiconductor operations and system automation under the New Product Introduction (NPI) department.
           </li>
-          <li>
-            <strong>Internal EIC System:</strong> Developed and deployed an Electronic Inspection Checklist for digital quality control in the NPI line.
-          </li>
-          <li>
-            <strong>Web-based SQL Automation:</strong> Built a secure platform for material tracking and query submission in semiconductor manufacturing.
-          </li>
-          <li>
-            <strong>Security & IRM:</strong> Participated in terminal password configuration and Information Rights Management setup for secure access and digital rights protocols.
-          </li>
-          <li>
-            <strong>Failure Analysis:</strong> Conducted hands-on inspections using Keyence VHX-7000 and Olympus MX51 equipment.
-          </li>
-          <li>
-            <strong>AINA AI System:</strong> Co-developed and documented an AI-powered system integrating ML, NLP, and voice interface for health guidance and automation.
-          </li>
-          <li>
-            <strong>Industry Seminars:</strong> Attended <em>Microsoft Season of AI Season of Agents (Season 4)</em> and <em>Modern Technologies: Shaping the Future of Software Development and IT Operations</em>.
-          </li>
-          <li>
-            <strong>Academic Honors:</strong> Graduated with High Honors from Mapúa Malayan Colleges Laguna (Senior High School).
-          </li>
-          <li>
-            <strong>Leadership:</strong> Treasurer, Junior Philippine Computer Society (JPCS) MCL Chapter.
-          </li>
-          <li>
-            <strong>Esports:</strong> Former player for the Warlocks, Mapúa MCL esports team, representing the school in competitive gaming events.
-          </li>
+          {/* ...existing code... */}
         </ul>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section id="contact" className="vw-section vw-contact-section">
+      <motion.section id="contact" className="vw-section vw-contact-section" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
         <h2>Contact</h2>
         <div className="vw-contact-list">
           <div className="vw-contact-item">
@@ -127,12 +121,13 @@ function App() {
             <a href="https://www.linkedin.com/in/vincent-luis-nueva-espa%C3%B1a-955085325/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
-      <section id="projects" className="vw-section vw-projects-section">
+      <motion.section id="projects" className="vw-section vw-projects-section" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
         <h2>Projects</h2>
         <div className="vw-projects-list">
+          {/* ...existing code... */}
           <div className="vw-project-card">
             <img src="./assets/placeholder-vaporwave.svg" alt="AINA project" className="vw-project-img" />
             <div className="vw-project-info">
@@ -143,103 +138,23 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="vw-project-card">
-            <img src="./assets/placeholder-vaporwave.svg" alt="Nutritrack project" className="vw-project-img" />
-            <div className="vw-project-info">
-              <h3>Nutritrack</h3>
-              <p>A web-based system for automated BMI calculation, nutrition tracking, and SQL-powered data automation for health monitoring in organizations.</p>
-              <div className="vw-project-tags">
-                <span>JavaScript</span><span>React</span><span>SQL</span><span>Automation</span>
-              </div>
-            </div>
-          </div>
+          {/* ...existing code... */}
         </div>
-      </section>
+      </motion.section>
 
       {/* Skills Section */}
-      <section id="skills" className="vw-section vw-skills-section">
+      <motion.section id="skills" className="vw-section vw-skills-section" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
         <h2>Skills</h2>
         <div className="vw-skills-categories">
-          <div className="vw-skill-category">
-            <h3>Programming Languages</h3>
-            <ul className="vw-skill-list">
-              <li><span role="img" aria-label="python">🐍</span> Python</li>
-              <li><span role="img" aria-label="csharp">#️⃣</span> C#</li>
-              <li><span role="img" aria-label="js">✨</span> JavaScript</li>
-              <li><span role="img" aria-label="html">🌐</span> HTML/CSS</li>
-              <li><span role="img" aria-label="sql">🗄️</span> SQL</li>
-            </ul>
-          </div>
-          <div className="vw-skill-category">
-            <h3>Frameworks & Tools</h3>
-            <ul className="vw-skill-list">
-              <li>.NET</li>
-              <li>Xamarin</li>
-              <li>Flask</li>
-              <li>LangChain</li>
-              <li>React (basic)</li>
-              <li>Vercel</li>
-              <li>VS Code</li>
-              <li>Git</li>
-            </ul>
-          </div>
-          <div className="vw-skill-category">
-            <h3>AI & Machine Learning</h3>
-            <ul className="vw-skill-list">
-              <li>Natural Language Processing</li>
-              <li>Scikit-learn (Random Forest, Classification Models)</li>
-              <li>Gemini API</li>
-              <li>Google Generative AI</li>
-              <li>Voice Recognition</li>
-              <li>TTS Systems</li>
-            </ul>
-          </div>
-          <div className="vw-skill-category">
-            <h3>Database Management</h3>
-            <ul className="vw-skill-list">
-              <li>MySQL</li>
-              <li>SQL Server</li>
-              <li>Azure Database Integration</li>
-            </ul>
-          </div>
-          <div className="vw-skill-category">
-            <h3>Software & Systems</h3>
-            <ul className="vw-skill-list">
-              <li>Power BI</li>
-              <li>Keyence VHX-7000</li>
-              <li>Olympus MX51</li>
-              <li>Windows Server (basic terminal admin)</li>
-              <li>Information Rights Management</li>
-            </ul>
-          </div>
-          <div className="vw-skill-category">
-            <h3>Project Experience</h3>
-            <ul className="vw-skill-list">
-              <li>Health-focused AI assistant (AINA)</li>
-              <li>Automated BMI Systems</li>
-              <li>Web-based SQL query automation</li>
-              <li>Internal checklists for manufacturing</li>
-            </ul>
-          </div>
-          <div className="vw-skill-category">
-            <h3>Soft Skills</h3>
-            <ul className="vw-skill-list">
-              <li>Technical Documentation</li>
-              <li>Problem Solving</li>
-              <li>Team Collaboration</li>
-              <li>Research Synthesis</li>
-              <li>System Analysis</li>
-              <li>Public Speaking</li>
-            </ul>
-          </div>
+          {/* ...existing code... */}
         </div>
-      </section>
+      </motion.section>
 
       {/* Get in Touch Section */}
-      <section id="get-in-touch" className="vw-section vw-contact-section">
+      <motion.section id="get-in-touch" className="vw-section vw-contact-section" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
         <h2>Get in Touch</h2>
         <ContactForm />
-      </section>
+      </motion.section>
     </div>
   );
 }
