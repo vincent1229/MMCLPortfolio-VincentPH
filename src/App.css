@@ -1,294 +1,34 @@
-/* Achievements & Experience Section Styles */
-.vw-achievements-section {
-  margin-top: 2.5rem;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&family=VT323&display=swap');
+
+/* Vaporwave color variables */
+:root {
+  --vw-pink: #ff71ce;
+  --vw-purple: #b967ff;
+  --vw-blue: #01cdfe;
+  --vw-mint: #05ffa1;
+  --vw-yellow: #fffb96;
+  --vw-dark: #2d1b55;
+  --vw-white: #f3f3f3;
 }
-.vw-achievements-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+
+/* Vaporwave motif background with grid overlay */
+.vaporwave-bg {
+  min-height: 100vh;
+  color: var(--vw-white);
+  font-family: 'Orbitron', 'Press Start 2P', 'VT323', system-ui, monospace, sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-}
-.vw-achievements-list li {
-  background: linear-gradient(90deg, #ff8ae2 0%, #a890fe 100%);
-  color: #fff;
-  padding: 1rem 1.2rem;
-  border-radius: 14px;
-  font-size: 1.08rem;
-  font-family: 'Orbitron', sans-serif;
-  box-shadow: 0 2px 8px 0 rgba(255, 138, 226, 0.13);
-  line-height: 1.6;
-}
-.vw-achievements-list strong {
-  color: #fff;
-  text-shadow: 0 0 6px #a890fe;
-}
-.vw-achievements-list em {
-  color: #fff7;
-  font-style: italic;
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0 2px, transparent 2px 40px),
+    linear-gradient(135deg, var(--vw-pink) 0%, var(--vw-purple) 40%, var(--vw-blue) 100%),
+    url('https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/65405c9cc27f56001dcb0c07.jpg');
+  background-blend-mode: lighten, screen, overlay;
+  background-size: cover, cover, cover, cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-@media (max-width: 700px) {
-  .vw-achievements-list li {
-    font-size: 0.98rem;
-    padding: 0.7rem 0.6rem;
-  }
-}
-/* Contact Section Styles */
-.vw-contact-section {
-  margin-top: 2.5rem;
-}
-.vw-contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  align-items: flex-start;
-  margin-top: 1.2rem;
-}
-.vw-contact-item {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  font-size: 1.1rem;
-  background: linear-gradient(90deg, #ff8ae2 0%, #a890fe 100%);
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 12px;
-  font-family: 'Orbitron', sans-serif;
-  box-shadow: 0 2px 8px 0 rgba(255, 138, 226, 0.13);
-}
-.vw-contact-item a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.vw-contact-item a:hover {
-  color: #a890fe;
-}
-.vw-contact-item span[role="img"] {
-  font-size: 1.3rem;
-}
-
-@media (max-width: 700px) {
-  .vw-contact-list {
-    align-items: center;
-  }
-}
-/* Projects Section Styles */
-.vw-projects-section {
-  margin-top: 2.5rem;
-}
-.vw-projects-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-.vw-project-card {
-  background: rgba(255, 255, 255, 0.09);
-  border-radius: 18px;
-  box-shadow: 0 2px 16px 0 rgba(255, 138, 226, 0.13);
-  border: 2px solid #a890fe;
-  max-width: 340px;
-  min-width: 260px;
-  padding: 1.2rem 1rem 1.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.vw-project-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 6px 32px 0 #ff8ae2cc, 0 0 16px 0 #a890fe99;
-}
-.vw-project-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 16px;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 16px 0 #a890fe55;
-  background: #fff;
-}
-.vw-project-info {
-  text-align: center;
-}
-.vw-project-info h3 {
-  font-family: 'Orbitron', 'Press Start 2P', cursive;
-  font-size: 1.2rem;
-  color: #ff8ae2;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 8px #a890fe;
-}
-.vw-project-info p {
-  font-size: 1rem;
-  color: #fff;
-  margin-bottom: 0.7rem;
-}
-.vw-project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-}
-.vw-project-tags span {
-  background: linear-gradient(90deg, #ff8ae2 0%, #a890fe 100%);
-  color: #fff;
-  padding: 0.3rem 0.8rem;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  font-family: 'Orbitron', sans-serif;
-  box-shadow: 0 1px 4px 0 rgba(255, 138, 226, 0.13);
-}
-
-@media (max-width: 900px) {
-  .vw-projects-list {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
-  }
-  .vw-project-card {
-    min-width: 90%;
-    max-width: 100%;
-  }
-}
-/* Skills Section Styles */
-.vw-skills-section {
-  margin-top: 2.5rem;
-}
-.vw-skills-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-.vw-skill-category {
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 18px;
-  padding: 1.2rem 1.5rem;
-  min-width: 220px;
-  max-width: 270px;
-  box-shadow: 0 2px 8px 0 rgba(168, 144, 254, 0.1);
-  border: 2px solid #a890fe;
-  margin-bottom: 1.5rem;
-}
-.vw-skill-category h3 {
-  font-family: 'Orbitron', 'Press Start 2P', cursive;
-  font-size: 1.1rem;
-  color: #ff8ae2;
-  margin-bottom: 0.7rem;
-  text-shadow: 0 0 8px #a890fe;
-  letter-spacing: 1px;
-}
-.vw-skill-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.vw-skill-list li {
-  background: linear-gradient(90deg, #ff8ae2 0%, #a890fe 100%);
-  color: #fff;
-  padding: 0.4rem 1rem;
-  border-radius: 12px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1rem;
-  box-shadow: 0 2px 8px 0 rgba(255, 138, 226, 0.15);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.vw-skill-list li span[role="img"] {
-  font-size: 1.2rem;
-  margin-right: 0.4rem;
-}
-
-@media (max-width: 900px) {
-  .vw-skills-categories {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
-  }
-  .vw-skill-category {
-    min-width: 180px;
-    max-width: 100%;
-  }
-}
-/* About Section Styles */
-.vw-about {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(40, 0, 80, 0.5);
-  border-radius: 24px;
-  box-shadow: 0 4px 32px 0 rgba(255, 138, 226, 0.15);
-  border: 2px solid #a890fe;
-  padding: 2.5rem 2rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.vw-about-content {
-  display: flex;
-  align-items: flex-start;
-  gap: 2.5rem;
-  width: 100%;
-}
-.vw-about-photo {
-  min-width: 120px;
-  min-height: 120px;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #a890fe 0%, #ff8ae2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 32px 0 #ff8ae2aa, 0 0 16px 0 #a890fe99;
-  border: 4px solid #fff;
-  margin-top: 0.5rem;
-}
-.vw-about-photo-emoji {
-  font-size: 3.5rem;
-  filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #ff8ae2);
-}
-.vw-about-text {
-  flex: 1;
-}
-.vw-about-text h2 {
-  font-family: 'Orbitron', 'Press Start 2P', cursive;
-  font-size: 2rem;
-  color: #ff8ae2;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 8px #a890fe;
-}
-.vw-about-text p {
-  font-size: 1.1rem;
-  color: #fff;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 700px) {
-  .vw-about-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
-  }
-  .vw-about-photo {
-    width: 80px;
-    height: 80px;
-    min-width: 80px;
-    min-height: 80px;
-  }
-  .vw-about {
-    padding: 1.2rem 0.5rem;
-  }
-}
 /* Hero Section Styles */
 .vw-hero {
   position: relative;
@@ -299,7 +39,6 @@
   overflow: hidden;
   background: none;
 }
-
 .vw-hero-bg-anim {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -308,12 +47,10 @@
   opacity: 0.8;
   animation: vw-gradient-move 8s ease-in-out infinite alternate;
 }
-
 @keyframes vw-gradient-move {
   0% { filter: hue-rotate(0deg) blur(0px); }
   100% { filter: hue-rotate(30deg) blur(2px); }
 }
-
 .vw-hero-content {
   position: relative;
   z-index: 1;
@@ -323,7 +60,6 @@
   justify-content: center;
   padding: 3rem 1rem 2rem 1rem;
 }
-
 .vw-hero-avatar {
   width: 120px;
   height: 120px;
@@ -340,21 +76,69 @@
   font-size: 3.5rem;
   filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #ff8ae2);
 }
-
 .vw-hero-title {
-  font-family: 'Press Start 2P', 'Orbitron', cursive;
+  font-family: 'Press Start 2P', 'VT323', 'Orbitron', cursive;
   font-size: 2.5rem;
-  color: #fff;
-  text-shadow: 0 0 8px #ff8ae2, 0 0 16px #a890fe;
+  color: var(--vw-yellow);
+  text-shadow: 0 0 8px var(--vw-pink), 0 0 16px var(--vw-purple), 0 0 24px var(--vw-blue);
   margin: 0 0 0.5rem 0;
   letter-spacing: 2px;
 }
+/* Glitch animation for hero title */
+.glitch {
+  position: relative;
+  color: var(--vw-yellow);
+  font-family: 'Press Start 2P', 'VT323', 'Orbitron', cursive;
+  text-shadow:
+    2px 0 var(--vw-pink),
+    -2px 0 var(--vw-blue),
+    0 2px var(--vw-purple),
+    0 -2px var(--vw-mint);
+  animation: glitch 1.2s infinite linear alternate-reverse;
+}
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  overflow: hidden;
+  color: var(--vw-blue);
+  z-index: 1;
+  opacity: 0.7;
+}
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--vw-pink);
+  animation: glitchTop 1.2s infinite linear alternate-reverse;
+}
+.glitch::after {
+  left: -2px;
+  text-shadow: 2px 0 var(--vw-mint);
+  animation: glitchBot 1.2s infinite linear alternate-reverse;
+}
+@keyframes glitch {
+  0% { text-shadow: 2px 0 var(--vw-pink), -2px 0 var(--vw-blue), 0 2px var(--vw-purple), 0 -2px var(--vw-mint); }
+  20% { text-shadow: -2px 0 var(--vw-pink), 2px 0 var(--vw-blue), 0 -2px var(--vw-purple), 0 2px var(--vw-mint); }
+  40% { text-shadow: 2px 2px var(--vw-pink), -2px -2px var(--vw-blue), 2px -2px var(--vw-purple), -2px 2px var(--vw-mint); }
+  60% { text-shadow: -2px -2px var(--vw-pink), 2px 2px var(--vw-blue), -2px 2px var(--vw-purple), 2px -2px var(--vw-mint); }
+  100% { text-shadow: 2px 0 var(--vw-pink), -2px 0 var(--vw-blue), 0 2px var(--vw-purple), 0 -2px var(--vw-mint); }
+}
+@keyframes glitchTop {
+  0% { clip-path: inset(0 0 60% 0); }
+  50% { clip-path: inset(0 0 20% 0); }
+  100% { clip-path: inset(0 0 60% 0); }
+}
+@keyframes glitchBot {
+  0% { clip-path: inset(60% 0 0 0); }
+  50% { clip-path: inset(20% 0 0 0); }
+  100% { clip-path: inset(60% 0 0 0); }
+}
 .vw-hero-tagline {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.2rem;
-  color: #fff;
+  font-family: 'VT323', 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  color: var(--vw-mint);
   margin-bottom: 1.5rem;
-  text-shadow: 0 0 6px #a890fe;
+  text-shadow: 0 0 6px var(--vw-purple);
 }
 .vw-hero-nav {
   display: flex;
@@ -362,180 +146,18 @@
   margin-top: 0.5rem;
 }
 .vw-hero-nav a {
-  color: #fff;
-  font-family: 'Orbitron', sans-serif;
+  color: var(--vw-dark);
+  font-family: 'VT323', 'Orbitron', sans-serif;
   font-size: 1.1rem;
   text-decoration: none;
   padding: 0.5rem 1.2rem;
   border-radius: 8px;
-  background: linear-gradient(90deg, #a890fe 0%, #ff8ae2 100%);
+  background: linear-gradient(90deg, var(--vw-pink) 0%, var(--vw-blue) 100%);
   box-shadow: 0 2px 8px 0 rgba(255, 138, 226, 0.2);
   transition: background 0.2s, color 0.2s;
+  border: 2px solid var(--vw-purple);
 }
 .vw-hero-nav a:hover {
-  background: #fff;
-  color: #a890fe;
-}
-
-@media (max-width: 700px) {
-  .vw-hero-title {
-    font-size: 1.3rem;
-  }
-  .vw-hero-avatar {
-    width: 80px;
-    height: 80px;
-  }
-  .vw-hero-content {
-    padding: 2rem 0.2rem 1rem 0.2rem;
-  }
-  .vw-hero-nav {
-    gap: 0.5rem;
-  }
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&display=swap');
-
-.vaporwave-bg {
-  min-height: 100vh;
-  color: #fff;
-  font-family: 'Orbitron', 'Press Start 2P', system-ui, sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  /* Vaporwave motif background */
-  background:
-    linear-gradient(135deg, #ff8ae2 0%, #8fd3f4 100%),
-    url('https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/65405c9cc27f56001dcb0c07.jpg');
-  background-blend-mode: lighten, screen;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.vw-header {
-  padding: 2rem 0 1rem 0;
-  text-align: center;
-  background: linear-gradient(90deg, #ff8ae2 0%, #a890fe 100%);
-  box-shadow: 0 4px 32px 0 rgba(168, 144, 254, 0.2);
-}
-
-.vw-title {
-  font-family: 'Press Start 2P', 'Orbitron', cursive;
-  font-size: 2.5rem;
-  letter-spacing: 2px;
-  color: #fff;
-  text-shadow: 0 0 8px #ff8ae2, 0 0 16px #a890fe;
-  margin: 0 0 1rem 0;
-}
-
-.vw-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 0.5rem;
-}
-.vw-nav a {
-  color: #fff;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.1rem;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #a890fe 0%, #ff8ae2 100%);
-  box-shadow: 0 2px 8px 0 rgba(255, 138, 226, 0.2);
-  transition: background 0.2s, color 0.2s;
-}
-.vw-nav a:hover {
-  background: #fff;
-  color: #a890fe;
-}
-
-main {
-  flex: 1;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem 1rem 1rem;
-}
-
-.vw-section {
-  background: rgba(40, 0, 80, 0.5);
-  border-radius: 24px;
-  margin-bottom: 2rem;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 4px 32px 0 rgba(255, 138, 226, 0.15);
-  border: 2px solid #a890fe;
-}
-.vw-section h2 {
-  font-family: 'Orbitron', 'Press Start 2P', cursive;
-  font-size: 2rem;
-  color: #ff8ae2;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 8px #a890fe;
-}
-.vw-section p, .vw-section li {
-  font-size: 1.1rem;
-  color: #fff;
-  line-height: 1.7;
-}
-
-.vw-project-list {
-  list-style: none;
-  padding: 0;
-}
-.vw-project-list li {
-  margin-bottom: 1.5rem;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 8px 0 rgba(168, 144, 254, 0.1);
-}
-.vw-project-list h3 {
-  color: #a890fe;
-  margin-bottom: 0.3rem;
-  font-size: 1.2rem;
-}
-
-.vw-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.vw-skills li {
-  background: linear-gradient(90deg, #ff8ae2 0%, #a890fe 100%);
-  color: #fff;
-  padding: 0.5rem 1.2rem;
-  border-radius: 16px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1rem;
-  box-shadow: 0 2px 8px 0 rgba(255, 138, 226, 0.15);
-}
-
-.vw-footer {
-  text-align: center;
-  padding: 1.5rem 0 1rem 0;
-  background: linear-gradient(90deg, #a890fe 0%, #ff8ae2 100%);
-  color: #fff;
-  font-family: 'Orbitron', 'Press Start 2P', cursive;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  box-shadow: 0 -2px 16px 0 rgba(255, 138, 226, 0.1);
-}
-
-@media (max-width: 700px) {
-  .vw-title {
-    font-size: 1.5rem;
-  }
-  main {
-    padding: 1rem 0.2rem;
-  }
-  .vw-section {
-    padding: 1rem 0.5rem;
-  }
-  .vw-nav {
-    gap: 0.5rem;
-  }
+  background: var(--vw-purple);
+  color: var(--vw-yellow);
 }

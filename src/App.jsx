@@ -46,7 +46,7 @@ function App() {
           <div className="vw-hero-avatar">
             <span role="img" aria-label="avatar" className="vw-hero-avatar-emoji">🦄</span>
           </div>
-          <h1 className="vw-hero-title">Vincent</h1>
+          <h1 className="vw-hero-title glitch" data-text="Vincent">Vincent</h1>
           <p className="vw-hero-tagline">Computer Science & Data Analyst</p>
           <div className="vw-hero-nav">
             <a href="#about">About</a>
