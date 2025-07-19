@@ -21,13 +21,13 @@
             <strong>AINA AI System:</strong> Co-developed and documented an AI-powered system integrating ML, NLP, and voice interface for health guidance and automation.
           </li>
           <li>
-            <strong>Industry Seminars:</strong> Attended <em>Microsoft Season of AI – Season of Agents (Season 4)</em> and <em>Modern Technologies: Shaping the Future of Software Development and IT Operations</em>.
+            <strong>Industry Seminars:</strong> Attended <em>Microsoft Season of AI Season of Agents (Season 4)</em> and <em>Modern Technologies: Shaping the Future of Software Development and IT Operations</em>.
           </li>
           <li>
             <strong>Academic Honors:</strong> Graduated with High Honors from Mapúa Malayan Colleges Laguna (Senior High School).
           </li>
           <li>
-            <strong>Leadership:</strong> Treasurer, Junior Philippine Computer Society (JPCS) – MCL Chapter.
+            <strong>Leadership:</strong> Treasurer, Junior Philippine Computer Society (JPCS) MCL Chapter.
           </li>
           <li>
             <strong>Esports:</strong> Former player for the Warlocks, Mapúa MCL esports team, representing the school in competitive gaming events.
@@ -154,7 +154,43 @@
       </section>
 
 
+
+import React, { useState } from 'react';
 import './App.css';
+
+// ContactForm component for sending email via mailto
+function ContactForm() {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Message from ${form.name || 'Portfolio Visitor'}`);
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
+    window.location.href = `mailto:vlnuevaespana@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  return (
+    <form className="vw-contact-form" onSubmit={handleSubmit} style={{maxWidth: 500, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.2rem'}}>
+      <label>
+        Name
+        <input type="text" name="name" value={form.name} onChange={handleChange} required className="vw-input" />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" value={form.email} onChange={handleChange} required className="vw-input" />
+      </label>
+      <label>
+        Write your message here
+        <textarea name="message" value={form.message} onChange={handleChange} required className="vw-input" rows={5} />
+      </label>
+      <button type="submit" className="vw-btn">Send Message</button>
+    </form>
+  );
+}
 
 function App() {
   return (
@@ -163,41 +199,168 @@ function App() {
       <section className="vw-hero">
         <div className="vw-hero-content">
           <div className="vw-hero-avatar">
-            {/* Replace with your image if desired */}
             <span role="img" aria-label="avatar" className="vw-hero-avatar-emoji">🦄</span>
           </div>
           <h1 className="vw-hero-title">Vincent</h1>
-          <p className="vw-hero-tagline">Creative Developer & Designer</p>
+          <p className="vw-hero-tagline">Computer Science & Data Analyst</p>
           <div className="vw-hero-nav">
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
+            <a href="#get-in-touch">Get in Touch</a>
           </div>
         </div>
         <div className="vw-hero-bg-anim"></div>
       </section>
+
       {/* About Section */}
       <section id="about" className="vw-section vw-about">
         <div className="vw-about-content">
-          <div className="vw-about-photo">
-            {/* Replace with your photo if desired */}
-            <span role="img" aria-label="profile" className="vw-about-photo-emoji">👨‍💻</span>
-          </div>
-          <div className="vw-about-text">
+          {/* Removed the small emoji/photo for a cleaner look */}
+          <div className="vw-about-text" style={{width: '100%'}}>
             <h2>About Me</h2>
             <p>
-              I am a fourth-year Computer Science student with a strong foundation in software development, artificial intelligence, and systems integration. I recently completed my practicum at STMicroelectronics Calamba, where I was assigned under the New Product Introduction (NPI) department. My practicum involved hands-on experience in semiconductor manufacturing processes, full-stack web development, SQL-based data automation, inventory and lot management, failure analysis inspection, and deploying in-house systems such as the EIC (Electronic Inspection Checklist).
+              I am a fourth-year Computer Science student at Mapúa Malayan Colleges Laguna and currently a practicum intern at STMicroelectronics Calamba under the New Product Introduction (NPI) department. My work involves hands-on experience in semiconductor operations, full-stack web development, SQL-based data automation, inventory and lot management, and system deployment such as the Electronic Inspection Checklist (EIC).
             </p>
             <p>
-              My passion lies in building intelligent systems that improve operational efficiency and user experience—whether through automated tools, data-driven applications, or AI-powered interfaces. I have developed and documented AI modules that integrate natural language processing, voice interfaces, and machine learning models for real-world applications in healthcare and automation.
+              With a strong passion for data science and intelligent systems, I co-developed AINA, an AI-powered assistant that integrates machine learning, natural language processing, and voice interfaces for real-world healthcare applications. I previously served as Treasurer of the Junior Philippine Computer Society (JPCS) – MCL Chapter and played for Warlocks, the official esports team of Mapúa MCL, where I developed both leadership and teamwork skills. I also graduated with High Honors during my senior high school years at Mapúa MCL.
             </p>
             <p>
-              Driven by both curiosity and a commitment to excellence, I strive to bridge academic knowledge with practical industry solutions. My goal is to continue developing impactful systems at the intersection of technology, AI, and human-centered design.
+              I am committed to transforming academic knowledge into impactful solutions that blend technology with human-centered design, and I continually strive to grow as a future data scientist and software engineer.
             </p>
           </div>
         </div>
       </section>
+
+      {/* Achievements & Experience Section */}
+      <section className="vw-section vw-achievements-section">
+        <h2>Achievements & Experience</h2>
+        <ul className="vw-achievements-list">
+          <li>
+            <strong>OJT at STMicroelectronics Calamba (324 hours):</strong> Contributed to real-world projects in semiconductor operations and system automation under the New Product Introduction (NPI) department.
+          </li>
+          <li>
+            <strong>Internal EIC System:</strong> Developed and deployed an Electronic Inspection Checklist for digital quality control in the NPI line.
+          </li>
+          <li>
+            <strong>Web-based SQL Automation:</strong> Built a secure platform for material tracking and query submission in semiconductor manufacturing.
+          </li>
+          <li>
+            <strong>Security & IRM:</strong> Participated in terminal password configuration and Information Rights Management setup for secure access and digital rights protocols.
+          </li>
+          <li>
+            <strong>Failure Analysis:</strong> Conducted hands-on inspections using Keyence VHX-7000 and Olympus MX51 equipment.
+          </li>
+          <li>
+            <strong>AINA AI System:</strong> Co-developed and documented an AI-powered system integrating ML, NLP, and voice interface for health guidance and automation.
+          </li>
+          <li>
+            <strong>Industry Seminars:</strong> Attended <em>Microsoft Season of AI Season of Agents (Season 4)</em> and <em>Modern Technologies: Shaping the Future of Software Development and IT Operations</em>.
+          </li>
+          <li>
+            <strong>Academic Honors:</strong> Graduated with High Honors from Mapúa Malayan Colleges Laguna (Senior High School).
+          </li>
+          <li>
+            <strong>Leadership:</strong> Treasurer, Junior Philippine Computer Society (JPCS) MCL Chapter.
+          </li>
+          <li>
+            <strong>Esports:</strong> Former player for the Warlocks, Mapúa MCL esports team, representing the school in competitive gaming events.
+          </li>
+        </ul>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="vw-section vw-contact-section">
+        <h2>Contact</h2>
+        <div className="vw-contact-list">
+          <div className="vw-contact-item">
+            <span role="img" aria-label="email">📧</span>
+            <a href="mailto:vlnuevaespana@gmail.com">vlnuevaespana@gmail.com</a>
+          </div>
+          <div className="vw-contact-item">
+            <span role="img" aria-label="linkedin">💼</span>
+            <a href="https://www.linkedin.com/in/vincent-luis-nueva-espa%C3%B1a-955085325/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="vw-section vw-projects-section">
+        <h2>Projects</h2>
+        <div className="vw-projects-list">
+          <div className="vw-project-card">
+            <img src="./assets/placeholder-vaporwave.svg" alt="AINA project" className="vw-project-img" />
+            <div className="vw-project-info">
+              <h3>AINA (AI Nutrition Assistant)</h3>
+              <p>An AI-powered health assistant that provides nutrition advice, meal planning, and voice interaction. Integrates NLP, TTS, and ML for real-world healthcare support.</p>
+              <div className="vw-project-tags">
+                <span>Python</span><span>Flask</span><span>Scikit-learn</span><span>Voice Recognition</span><span>AI</span>
+              </div>
+            </div>
+          </div>
+          <div className="vw-project-card">
+            <img src="./assets/placeholder-vaporwave.svg" alt="Nutritrack project" className="vw-project-img" />
+            <div className="vw-project-info">
+              <h3>Nutritrack</h3>
+              <p>A web-based system for automated BMI calculation, nutrition tracking, and SQL-powered data automation for health monitoring in organizations.</p>
+              <div className="vw-project-tags">
+                <span>JavaScript</span><span>React</span><span>SQL</span><span>Automation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="vw-section vw-skills-section">
+        <h2>Skills</h2>
+        <div className="vw-skills-categories">
+          {/* ...existing code... */}
+        </div>
+      </section>
+
+      {/* Get in Touch Section */}
+      <section id="get-in-touch" className="vw-section vw-contact-section">
+        <h2>Get in Touch</h2>
+        <ContactForm />
+      </section>
+
+// ContactForm component for sending email via mailto
+import React, { useState } from 'react';
+
+function ContactForm() {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Message from ${form.name || 'Portfolio Visitor'}`);
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
+    window.location.href = `mailto:vlnuevaespana@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  return (
+    <form className="vw-contact-form" onSubmit={handleSubmit} style={{maxWidth: 500, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.2rem'}}>
+      <label>
+        Name
+        <input type="text" name="name" value={form.name} onChange={handleChange} required className="vw-input" />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" value={form.email} onChange={handleChange} required className="vw-input" />
+      </label>
+      <label>
+        Write your message here
+        <textarea name="message" value={form.message} onChange={handleChange} required className="vw-input" rows={5} />
+      </label>
+      <button type="submit" className="vw-btn">Send Message</button>
+    </form>
+  );
+}
     </div>
   );
 }
