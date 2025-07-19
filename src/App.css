@@ -1,5 +1,18 @@
 /* --- Modern Vaporwave Portfolio Enhancements --- */
+
+/* Modern Vaporwave Portfolio CSS - Cleaned and Deduplicated */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&family=VT323&display=swap');
+
+/* Vaporwave color variables */
+:root {
+  --vw-pink: #ff71ce;
+  --vw-purple: #b967ff;
+  --vw-blue: #01cdfe;
+  --vw-mint: #05ffa1;
+  --vw-yellow: #fffb96;
+  --vw-dark: #2d1b55;
+  --vw-white: #f3f3f3;
+}
 
 html {
   scroll-behavior: smooth;
@@ -7,7 +20,15 @@ html {
 
 body, .vaporwave-bg {
   font-family: 'Orbitron', 'Press Start 2P', 'VT323', monospace, sans-serif;
-  background: linear-gradient(120deg, #ff71ce 0%, #b967ff 50%, #01cdfe 100%);
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0 2px, transparent 2px 40px),
+    linear-gradient(135deg, var(--vw-pink) 0%, var(--vw-purple) 40%, var(--vw-blue) 100%),
+    url('https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/65405c9cc27f56001dcb0c07.jpg');
+  background-blend-mode: lighten, screen, overlay;
+  background-size: cover, cover, cover, cover;
+  background-repeat: no-repeat;
+  background-position: center;
   min-height: 100vh;
   color: #111;
   position: relative;
@@ -51,7 +72,7 @@ body, .vaporwave-bg {
   font-size: 1.1rem;
   transition: color 0.2s;
   letter-spacing: 1px;
-/* removed orphaned cursor: pointer; */
+  cursor: pointer;
 }
 .vw-navbar-links a::after {
   content: '';
@@ -83,16 +104,15 @@ body, .vaporwave-bg {
 }
 .vw-hero-bg-anim {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
-  background: repeating-linear-gradient(135deg, #ff71ce22 0 2px, transparent 2px 40px), repeating-linear-gradient(225deg, #01cdfe22 0 2px, transparent 2px 40px);
-  opacity: 0.7;
-  pointer-events: none;
-  animation: grid-move 12s linear infinite;
+  background: linear-gradient(120deg, #ff8ae2 0%, #8fd3f4 100%);
+  opacity: 0.8;
+  animation: vw-gradient-move 8s ease-in-out infinite alternate;
 }
-@keyframes grid-move {
-  0% { background-position: 0 0, 0 0; }
-  100% { background-position: 80px 80px, -80px -80px; }
+@keyframes vw-gradient-move {
+  0% { filter: hue-rotate(0deg) blur(0px); }
+  100% { filter: hue-rotate(30deg) blur(2px); }
 }
 .vw-hero-content {
   z-index: 2;
@@ -107,50 +127,113 @@ body, .vaporwave-bg {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-18px); }
 }
-.vw-hero-title {
-  font-family: 'Orbitron', 'VT323', monospace;
-  font-size: 3.2rem;
-  color: #fff;
-  letter-spacing: 4px;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 16px #b967ff, 0 0 2px #fff;
-  position: relative;
-  animation: fadeIn 1.2s cubic-bezier(.4,0,.2,1);
+.vw-hero-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a890fe 0%, #ff8ae2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 32px 0 #ff8ae2aa, 0 0 16px 0 #a890fe99;
+  border: 4px solid #fff;
 }
-.vw-hero-title.glitch {
-  animation: glitch 1.5s infinite alternate-reverse;
+.vw-hero-avatar-emoji {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #ff8ae2);
+}
+.vw-hero-title {
+  font-family: 'Press Start 2P', 'VT323', 'Orbitron', cursive;
+  font-size: 2.5rem;
+  color: var(--vw-yellow);
+  text-shadow: 0 0 8px var(--vw-pink), 0 0 16px var(--vw-purple), 0 0 24px var(--vw-blue);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 2px;
+}
+/* Glitch animation for hero title */
+.glitch {
+  position: relative;
+  color: var(--vw-yellow);
+  font-family: 'Press Start 2P', 'VT323', 'Orbitron', cursive;
+  text-shadow:
+    2px 0 var(--vw-pink),
+    -2px 0 var(--vw-blue),
+    0 2px var(--vw-purple),
+    0 -2px var(--vw-mint);
+  animation: glitch 1.2s infinite linear alternate-reverse;
+}
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  overflow: hidden;
+  color: var(--vw-blue);
+  z-index: 1;
+  opacity: 0.7;
+}
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--vw-pink);
+  animation: glitchTop 1.2s infinite linear alternate-reverse;
+}
+.glitch::after {
+  left: -2px;
+  text-shadow: 2px 0 var(--vw-mint);
+  animation: glitchBot 1.2s infinite linear alternate-reverse;
 }
 @keyframes glitch {
-  0% { text-shadow: 2px 0 #ff71ce, -2px 0 #01cdfe; }
-  20% { text-shadow: -2px 0 #b967ff, 2px 2px #01cdfe; }
-  40% { text-shadow: 2px -2px #ff71ce, -2px 2px #b967ff; }
-  60% { text-shadow: 0 2px #01cdfe, 2px 0 #ff71ce; }
-  80% { text-shadow: -2px -2px #b967ff, 2px 2px #ff71ce; }
-  100% { text-shadow: 2px 0 #ff71ce, -2px 0 #01cdfe; }
+  0% { text-shadow: 2px 0 var(--vw-pink), -2px 0 var(--vw-blue), 0 2px var(--vw-purple), 0 -2px var(--vw-mint); }
+  20% { text-shadow: -2px 0 var(--vw-pink), 2px 0 var(--vw-blue), 0 -2px var(--vw-purple), 0 2px var(--vw-mint); }
+  40% { text-shadow: 2px 2px var(--vw-pink), -2px -2px var(--vw-blue), 2px -2px var(--vw-purple), -2px 2px var(--vw-mint); }
+  60% { text-shadow: -2px -2px var(--vw-pink), 2px 2px var(--vw-blue), -2px 2px var(--vw-purple), 2px -2px var(--vw-mint); }
+  100% { text-shadow: 2px 0 var(--vw-pink), -2px 0 var(--vw-blue), 0 2px var(--vw-purple), 0 -2px var(--vw-mint); }
 }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes glitchTop {
+  0% { clip-path: inset(0 0 60% 0); }
+  50% { clip-path: inset(0 0 20% 0); }
+  100% { clip-path: inset(0 0 60% 0); }
+}
+@keyframes glitchBot {
+  0% { clip-path: inset(60% 0 0 0); }
+  50% { clip-path: inset(20% 0 0 0); }
+  100% { clip-path: inset(60% 0 0 0); }
 }
 .vw-hero-tagline {
-  color: #01cdfe;
+  font-family: 'VT323', 'Orbitron', sans-serif;
   font-size: 1.3rem;
+  color: var(--vw-mint);
   margin-bottom: 1.5rem;
-  text-shadow: 0 0 8px #01cdfe, 0 0 2px #fff;
+  text-shadow: 0 0 6px var(--vw-purple);
 }
 
 /* Section Reveal Animations (Framer Motion) */
 .vw-section {
-  margin: 3.5rem auto 2.5rem auto;
+  background: rgba(40, 0, 80, 0.5);
+  border-radius: 24px;
+  margin-bottom: 2rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 32px 0 rgba(255, 138, 226, 0.15);
+  border: 2px solid #a890fe;
+  color: #111;
   max-width: 1100px;
-  padding: 2.5rem 1.5rem;
-  border-radius: 1.5rem;
-  background: rgba(255,255,255,0.13);
-  box-shadow: 0 4px 32px 0 #b967ff22, 0 0 0 2px #ff71ce22;
-  backdrop-filter: blur(8px) saturate(160%);
-  border: 1.5px solid #ff71ce33;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   transition: box-shadow 0.3s;
+}
+.vw-section h2 {
+  font-family: 'Orbitron', 'Press Start 2P', cursive;
+  font-size: 2rem;
+  color: #ff8ae2;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px #a890fe;
+}
+.vw-section p, .vw-section li {
+  font-size: 1.1rem;
+  color: #111;
+  line-height: 1.7;
 }
 .vw-section:hover {
   box-shadow: 0 8px 48px 0 #01cdfe44, 0 0 0 2px #b967ff44;
@@ -356,7 +439,6 @@ body, .vaporwave-bg {
     grid-template-columns: 1fr;
   }
 }
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&family=VT323&display=swap');
 
 /* Vaporwave color variables */
 :root {
