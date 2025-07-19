@@ -1,6 +1,8 @@
+
 import React, { useState } from 'react';
 import './App.css';
 
+// Contact form component
 function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
@@ -16,7 +18,7 @@ function ContactForm() {
   };
 
   return (
-    <form className="vw-contact-form" onSubmit={handleSubmit} style={{maxWidth: 500, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.2rem'}}>
+    <form className="vw-contact-form" onSubmit={handleSubmit} style={{ maxWidth: 500, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
       <label>
         Name
         <input type="text" name="name" value={form.name} onChange={handleChange} required className="vw-input" />
@@ -34,6 +36,7 @@ function ContactForm() {
   );
 }
 
+// Main App component
 function App() {
   return (
     <div className="vaporwave-bg">
@@ -55,7 +58,62 @@ function App() {
         </div>
         <div className="vw-hero-bg-anim"></div>
       </section>
-      {/* ...existing code... */}
+
+      {/* About Section */}
+      <section id="about" className="vw-section vw-about">
+        <div className="vw-about-content">
+          <div className="vw-about-text" style={{ width: '100%' }}>
+            <h2>About Me</h2>
+            <p>
+              I am a fourth-year Computer Science student at Mapúa Malayan Colleges Laguna and currently a practicum intern at STMicroelectronics Calamba under the New Product Introduction (NPI) department. My work involves hands-on experience in semiconductor operations, full-stack web development, SQL-based data automation, inventory and lot management, and system deployment such as the Electronic Inspection Checklist (EIC).
+            </p>
+            <p>
+              With a strong passion for data science and intelligent systems, I co-developed AINA, an AI-powered assistant that integrates machine learning, natural language processing, and voice interfaces for real-world healthcare applications. I previously served as Treasurer of the Junior Philippine Computer Society (JPCS) – MCL Chapter and played for Warlocks, the official esports team of Mapúa MCL, where I developed both leadership and teamwork skills. I also graduated with High Honors during my senior high school years at Mapúa MCL.
+            </p>
+            <p>
+              I am committed to transforming academic knowledge into impactful solutions that blend technology with human-centered design, and I continually strive to grow as a future data scientist and software engineer.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements & Experience Section */}
+      <section className="vw-section vw-achievements-section">
+        <h2>Achievements & Experience</h2>
+        <ul className="vw-achievements-list">
+          <li>
+            <strong>OJT at STMicroelectronics Calamba (324 hours):</strong> Contributed to real-world projects in semiconductor operations and system automation under the New Product Introduction (NPI) department.
+          </li>
+          <li>
+            <strong>Internal EIC System:</strong> Developed and deployed an Electronic Inspection Checklist for digital quality control in the NPI line.
+          </li>
+          <li>
+            <strong>Web-based SQL Automation:</strong> Built a secure platform for material tracking and query submission in semiconductor manufacturing.
+          </li>
+          <li>
+            <strong>Security & IRM:</strong> Participated in terminal password configuration and Information Rights Management setup for secure access and digital rights protocols.
+          </li>
+          <li>
+            <strong>Failure Analysis:</strong> Conducted hands-on inspections using Keyence VHX-7000 and Olympus MX51 equipment.
+          </li>
+          <li>
+            <strong>AINA AI System:</strong> Co-developed and documented an AI-powered system integrating ML, NLP, and voice interface for health guidance and automation.
+          </li>
+          <li>
+            <strong>Industry Seminars:</strong> Attended <em>Microsoft Season of AI Season of Agents (Season 4)</em> and <em>Modern Technologies: Shaping the Future of Software Development and IT Operations</em>.
+          </li>
+          <li>
+            <strong>Academic Honors:</strong> Graduated with High Honors from Mapúa Malayan Colleges Laguna (Senior High School).
+          </li>
+          <li>
+            <strong>Leadership:</strong> Treasurer, Junior Philippine Computer Society (JPCS) MCL Chapter.
+          </li>
+          <li>
+            <strong>Esports:</strong> Former player for the Warlocks, Mapúa MCL esports team, representing the school in competitive gaming events.
+          </li>
+        </ul>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="vw-section vw-contact-section">
         <h2>Contact</h2>
@@ -70,6 +128,7 @@ function App() {
           </div>
         </div>
       </section>
+
       {/* Projects Section */}
       <section id="projects" className="vw-section vw-projects-section">
         <h2>Projects</h2>
@@ -96,6 +155,7 @@ function App() {
           </div>
         </div>
       </section>
+
       {/* Skills Section */}
       <section id="skills" className="vw-section vw-skills-section">
         <h2>Skills</h2>
@@ -175,141 +235,6 @@ function App() {
         </div>
       </section>
 
-
-
-import React, { useState } from 'react';
-import './App.css';
-
-// ...existing code...
-
-function App() {
-  return (
-    <div className="vaporwave-bg">
-      {/* Hero Section */}
-      <section className="vw-hero">
-        <div className="vw-hero-content">
-          <div className="vw-hero-avatar">
-            <span role="img" aria-label="avatar" className="vw-hero-avatar-emoji">🦄</span>
-          </div>
-          <h1 className="vw-hero-title">Vincent</h1>
-          <p className="vw-hero-tagline">Computer Science & Data Analyst</p>
-          <div className="vw-hero-nav">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-            <a href="#get-in-touch">Get in Touch</a>
-          </div>
-        </div>
-        <div className="vw-hero-bg-anim"></div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="vw-section vw-about">
-        <div className="vw-about-content">
-          {/* Removed the small emoji/photo for a cleaner look */}
-          <div className="vw-about-text" style={{width: '100%'}}>
-            <h2>About Me</h2>
-            <p>
-              I am a fourth-year Computer Science student at Mapúa Malayan Colleges Laguna and currently a practicum intern at STMicroelectronics Calamba under the New Product Introduction (NPI) department. My work involves hands-on experience in semiconductor operations, full-stack web development, SQL-based data automation, inventory and lot management, and system deployment such as the Electronic Inspection Checklist (EIC).
-            </p>
-            <p>
-              With a strong passion for data science and intelligent systems, I co-developed AINA, an AI-powered assistant that integrates machine learning, natural language processing, and voice interfaces for real-world healthcare applications. I previously served as Treasurer of the Junior Philippine Computer Society (JPCS) – MCL Chapter and played for Warlocks, the official esports team of Mapúa MCL, where I developed both leadership and teamwork skills. I also graduated with High Honors during my senior high school years at Mapúa MCL.
-            </p>
-            <p>
-              I am committed to transforming academic knowledge into impactful solutions that blend technology with human-centered design, and I continually strive to grow as a future data scientist and software engineer.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Achievements & Experience Section */}
-      <section className="vw-section vw-achievements-section">
-        <h2>Achievements & Experience</h2>
-        <ul className="vw-achievements-list">
-          <li>
-            <strong>OJT at STMicroelectronics Calamba (324 hours):</strong> Contributed to real-world projects in semiconductor operations and system automation under the New Product Introduction (NPI) department.
-          </li>
-          <li>
-            <strong>Internal EIC System:</strong> Developed and deployed an Electronic Inspection Checklist for digital quality control in the NPI line.
-          </li>
-          <li>
-            <strong>Web-based SQL Automation:</strong> Built a secure platform for material tracking and query submission in semiconductor manufacturing.
-          </li>
-          <li>
-            <strong>Security & IRM:</strong> Participated in terminal password configuration and Information Rights Management setup for secure access and digital rights protocols.
-          </li>
-          <li>
-            <strong>Failure Analysis:</strong> Conducted hands-on inspections using Keyence VHX-7000 and Olympus MX51 equipment.
-          </li>
-          <li>
-            <strong>AINA AI System:</strong> Co-developed and documented an AI-powered system integrating ML, NLP, and voice interface for health guidance and automation.
-          </li>
-          <li>
-            <strong>Industry Seminars:</strong> Attended <em>Microsoft Season of AI Season of Agents (Season 4)</em> and <em>Modern Technologies: Shaping the Future of Software Development and IT Operations</em>.
-          </li>
-          <li>
-            <strong>Academic Honors:</strong> Graduated with High Honors from Mapúa Malayan Colleges Laguna (Senior High School).
-          </li>
-          <li>
-            <strong>Leadership:</strong> Treasurer, Junior Philippine Computer Society (JPCS) MCL Chapter.
-          </li>
-          <li>
-            <strong>Esports:</strong> Former player for the Warlocks, Mapúa MCL esports team, representing the school in competitive gaming events.
-          </li>S
-        </ul>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="vw-section vw-contact-section">
-        <h2>Contact</h2>
-        <div className="vw-contact-list">
-          <div className="vw-contact-item">
-            <span role="img" aria-label="email">📧</span>
-            <a href="mailto:vlnuevaespana@gmail.com">vlnuevaespana@gmail.com</a>
-          </div>
-          <div className="vw-contact-item">
-            <span role="img" aria-label="linkedin">💼</span>
-            <a href="https://www.linkedin.com/in/vincent-luis-nueva-espa%C3%B1a-955085325/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="vw-section vw-projects-section">
-        <h2>Projects</h2>
-        <div className="vw-projects-list">
-          <div className="vw-project-card">
-            <img src="./assets/placeholder-vaporwave.svg" alt="AINA project" className="vw-project-img" />
-            <div className="vw-project-info">
-              <h3>AINA (AI Nutrition Assistant)</h3>
-              <p>An AI-powered health assistant that provides nutrition advice, meal planning, and voice interaction. Integrates NLP, TTS, and ML for real-world healthcare support.</p>
-              <div className="vw-project-tags">
-                <span>Python</span><span>Flask</span><span>Scikit-learn</span><span>Voice Recognition</span><span>AI</span>
-              </div>
-            </div>
-          </div>
-          <div className="vw-project-card">
-            <img src="./assets/placeholder-vaporwave.svg" alt="Nutritrack project" className="vw-project-img" />
-            <div className="vw-project-info">
-              <h3>Nutritrack</h3>
-              <p>A web-based system for automated BMI calculation, nutrition tracking, and SQL-powered data automation for health monitoring in organizations.</p>
-              <div className="vw-project-tags">
-                <span>JavaScript</span><span>React</span><span>SQL</span><span>Automation</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="vw-section vw-skills-section">
-        <h2>Skills</h2>
-        <div className="vw-skills-categories">
-          {/* ...existing code... */}
-        </div>
-      </section>
-
       {/* Get in Touch Section */}
       <section id="get-in-touch" className="vw-section vw-contact-section">
         <h2>Get in Touch</h2>
@@ -320,3 +245,4 @@ function App() {
 }
 
 export default App;
+

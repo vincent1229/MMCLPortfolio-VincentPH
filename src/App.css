@@ -397,14 +397,19 @@
 
 .vaporwave-bg {
   min-height: 100vh;
-  background: linear-gradient(135deg, #ff8ae2 0%, #8fd3f4 100%);
-  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 40px),
-    linear-gradient(135deg, #ff8ae2 0%, #8fd3f4 100%);
   color: #fff;
   font-family: 'Orbitron', 'Press Start 2P', system-ui, sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  /* Vaporwave motif background */
+  background:
+    linear-gradient(135deg, #ff8ae2 0%, #8fd3f4 100%),
+    url('https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/65405c9cc27f56001dcb0c07.jpg');
+  background-blend-mode: lighten, screen;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .vw-header {
