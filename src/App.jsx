@@ -99,8 +99,8 @@ function App() {
             </p>
           </div>
         </div>
-      </section>
-
+      </FadeInSection>
+      
       {/* Achievements & Experience Section */}
       <FadeInSection className="vw-section vw-achievements-section">
         <h2>Achievements & Experience</h2>
