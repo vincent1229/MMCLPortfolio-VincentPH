@@ -51,7 +51,7 @@ body, .vaporwave-bg {
   font-size: 1.1rem;
   transition: color 0.2s;
   letter-spacing: 1px;
-  cursor: pointer;
+/* removed orphaned cursor: pointer; */
 }
 .vw-navbar-links a::after {
   content: '';
@@ -531,22 +531,4 @@ html {
   box-shadow: 0 2px 8px 0 rgba(255, 138, 226, 0.2);
   transition: background 0.2s, color 0.2s;
   border: 2px solid var(--vw-purple);
-  cursor: pointer;
-}
-.vw-btn {
-  font-family: 'VT323', 'Orbitron', sans-serif;
-  font-size: 1.1rem;
-  color: var(--vw-dark);
-  background: linear-gradient(90deg, var(--vw-pink) 0%, var(--vw-blue) 100%);
-  border: 2px solid var(--vw-purple);
-  border-radius: 8px;
-  padding: 0.6rem 1.5rem;
-  box-shadow: 0 2px 8px 0 rgba(255, 138, 226, 0.2);
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-}
-.vw-btn:hover {
-  background: var(--vw-purple);
-  color: var(--vw-yellow);
-  box-shadow: 0 4px 16px 0 #ff8ae2cc, 0 0 8px 0 #a890fe99;
 }
