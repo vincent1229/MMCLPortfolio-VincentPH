@@ -175,27 +175,29 @@ function App() {
         </div>
       </RevealSection>
 
-      {/* Projects Section */}
-      <RevealSection id="projects" className="vw-section vw-projects-section" direction="right">
-        <h2>Projects</h2>
-        <div className="vw-projects-list">
-          <div className="vw-project-card">
-            <img src="./assets/placeholder-vaporwave.svg" alt="AINA project" className="vw-project-img" />
-            <div className="vw-project-info">
-              <h3>AINA (AI Nutrition Assistant)</h3>
-              <p>An AI-powered health assistant that provides nutrition advice, meal planning, and voice interaction. Integrates NLP, TTS, and ML for real-world healthcare support.</p>
-              <div className="vw-project-tags">
-                <span>Python</span><span>Flask</span><span>Scikit-learn</span><span>Voice Recognition</span><span>AI</span>
+      {/* Projects Section - Modern Blue Themed Card Grid */}
+      <RevealSection id="projects" className="projects-section-blue" direction="right">
+        <h2 className="projects-title-blue">Featured Projects</h2>
+        <div className="projects-grid-blue">
+          {/* Project 1 */}
+          <div className="project-card-blue">
+            <img src="./assets/placeholder-vaporwave.svg" alt="AINA project" className="project-img-blue" />
+            <div className="project-info-blue">
+              <h3 className="project-name-blue">AINA (AI Nutrition Assistant)</h3>
+              <p className="project-desc-blue">An AI-powered health assistant that provides nutrition advice, meal planning, and voice interaction. Integrates NLP, TTS, and ML for real-world healthcare support.</p>
+              <div className="project-tags-blue">
+                <span>BMI</span><span>Computer Vision</span><span>Kiosk</span><span>Automation</span><span>AI</span>
               </div>
             </div>
           </div>
-          <div className="vw-project-card">
-            <img src="./assets/placeholder-vaporwave.svg" alt="Nutritrack project" className="vw-project-img" />
-            <div className="vw-project-info">
-              <h3>Nutritrack</h3>
-              <p>A web-based system for automated BMI calculation, nutrition tracking, and SQL-powered data automation for health monitoring in organizations.</p>
-              <div className="vw-project-tags">
-                <span>JavaScript</span><span>React</span><span>SQL</span><span>Automation</span>
+          {/* Project 2 */}
+          <div className="project-card-blue">
+            <img src="./assets/placeholder-vaporwave.svg" alt="Nutritrack project" className="project-img-blue" />
+            <div className="project-info-blue">
+              <h3 className="project-name-blue">Nutritrack</h3>
+              <p className="project-desc-blue">A web-based system for automated BMI calculation, nutrition tracking, and SQL-powered data automation for health monitoring in organizations.</p>
+              <div className="project-tags-blue">
+                <span>Mobile Application</span><span>Health and Wellness</span><span>Automation</span>
               </div>
             </div>
           </div>
