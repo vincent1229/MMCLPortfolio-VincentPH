@@ -90,7 +90,7 @@ function App() {
       <RevealSection className="vw-hero" direction="up">
         <div className="vw-hero-content">
           <div className="vw-hero-avatar">
-            <span role="img" aria-label="avatar" className="vw-hero-avatar-emoji">🦄</span>
+            <img src="/assets/profile.jpg" alt="Vincent Nueva España" className="vw-hero-avatar-img" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
           </div>
           <h1 className="vw-hero-title glitch" data-text="Vincent">Vincent</h1>
           <p className="vw-hero-tagline">Computer Science & Data Analyst</p>
