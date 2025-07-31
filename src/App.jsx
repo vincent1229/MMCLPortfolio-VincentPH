@@ -23,15 +23,15 @@ function ContactForm() {
     <form className="vw-contact-form" onSubmit={handleSubmit} style={{ maxWidth: 500, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
       <label>
         Name
-        <input type="text" name="name" value={form.name} onChange={handleChange} required className="vw-input" />
+        <input type="text" name="name" value={form.name} onChange={handleChange} required className="vw-input" style={{ width: '100%' }} />
       </label>
       <label>
         Email
-        <input type="email" name="email" value={form.email} onChange={handleChange} required className="vw-input" />
+        <input type="email" name="email" value={form.email} onChange={handleChange} required className="vw-input" style={{ width: '100%' }} />
       </label>
       <label>
-        Write your message here
-        <textarea name="message" value={form.message} onChange={handleChange} required className="vw-input" rows={5} />
+        Write your message here:
+        <textarea name="message" value={form.message} onChange={handleChange} required className="vw-input" rows={5} style={{ width: '100%' }} />
       </label>
       <button type="submit" className="vw-btn">Send Message</button>
     </form>
