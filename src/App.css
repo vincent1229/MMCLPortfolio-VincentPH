@@ -1,3 +1,124 @@
+/* --- Dashboard Layout Styles --- */
+.dashboard-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(120deg, #3ec6ff 0%, #8fd3f4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Tungsten', 'Orbitron', Arial, sans-serif;
+}
+.dashboard-container {
+  background: rgba(255,255,255,0.18);
+  border-radius: 2rem;
+  box-shadow: 0 8px 48px 0 #3ec6ff55, 0 0 0 2px #1976d255;
+  max-width: 700px;
+  width: 100%;
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  backdrop-filter: blur(16px) saturate(180%);
+}
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.dashboard-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3ec6ff 0%, #1976d2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 32px 0 #3ec6ff88, 0 0 16px 0 #1976d299;
+  border: 4px solid #fff;
+  overflow: hidden;
+}
+.dashboard-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.dashboard-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.dashboard-title {
+  font-family: 'Tungsten Bold', 'Tungsten', Arial, sans-serif;
+  font-size: 2.2rem;
+  color: #1976d2;
+  margin: 0 0 0.2rem 0;
+  letter-spacing: 2px;
+}
+.dashboard-tagline {
+  font-family: 'VT323', 'Orbitron', Arial, sans-serif;
+  font-size: 1.1rem;
+  color: #01cdfe;
+  margin: 0;
+  text-shadow: 0 0 6px #3ec6ff44;
+}
+.dashboard-tabs {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  justify-content: center;
+}
+.dashboard-tab {
+  background: none;
+  border: none;
+  font-family: 'Tungsten Bold', 'Tungsten', Arial, sans-serif;
+  font-size: 1.1rem;
+  color: #1976d2;
+  padding: 0.7rem 2.2rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 #3ec6ff44;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  position: relative;
+  outline: none;
+}
+.dashboard-tab.active, .dashboard-tab:hover {
+  background: linear-gradient(90deg, #3ec6ff, #1976d2, #01cdfe);
+  color: #fff;
+  box-shadow: 0 0 16px #3ec6ff55;
+}
+.dashboard-content {
+  width: 100%;
+  min-height: 320px;
+  margin-bottom: 2rem;
+}
+.dashboard-footer {
+  width: 100%;
+  border-top: 1.5px solid #3ec6ff44;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .dashboard-container {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+  }
+  .dashboard-header {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: center;
+  }
+  .dashboard-title-group {
+    align-items: center;
+  }
+  .dashboard-content {
+    min-height: 0;
+  }
+}
 /* --- Modern Vaporwave Portfolio Enhancements --- */
 
 /* Modern Vaporwave Portfolio CSS - Cleaned and Deduplicated */
