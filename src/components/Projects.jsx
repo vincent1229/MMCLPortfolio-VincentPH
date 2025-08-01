@@ -33,7 +33,7 @@ export default function Projects() {
         </h2>
         <div className="grid gap-8 max-w-4xl mx-auto">
           {projects.map((project, index) => (
-            <div key={index} className="bg-card rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center gap-6 animate-slide-up hover:scale-[1.02] transition-transform ease-in-out duration-300">
+            <div key={index} className="bg-card rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center gap-6 animate-slide-up hover:scale-[1.02] transition-transform ease-in-out duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 hover:shadow-xl">
               <div className="flex-shrink-0 w-24 h-24 bg-primary/10 rounded-lg flex items-center justify-center text-4xl text-primary shadow-md">
                 {index === 0 && <Globe size={48} />}
                 {index === 1 && <HeartPulse size={48} />}

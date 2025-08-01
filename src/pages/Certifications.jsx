@@ -9,7 +9,7 @@ function Certifications() {
         </h2>
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Certifications List */}
-          <div className="bg-card rounded-lg shadow-lg p-6 animate-slide-up hover:scale-[1.02] transition-transform ease-in-out duration-300">
+          <div className="bg-card rounded-lg shadow-lg p-6 animate-slide-up hover:scale-[1.02] transition-transform ease-in-out duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 hover:shadow-xl">
             <h3 className="text-2xl font-bold mb-2">CompTIA Strata IT Fundamentals Certification</h3>
             <p className="text-muted-foreground">Issued by CompTIA</p>
             <p className="text-sm text-muted-foreground">July 2024</p>
