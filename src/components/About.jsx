@@ -18,7 +18,13 @@ export default function About() {
             />
             <div className="text-left">
               <p className="mb-4 text-lg">
-                <span className="font-bold">Medical Research & Data Scientist.</span> I am a Computer Science student and software developer with a strong passion for medical research, and data analysis.  My expertise lies in building intelligent systems and integrating large language models into practical applications particularly web-based platforms that enhance user experience, automate tasks, and support data-driven healthcare research.
+                Hello! I'm <span className="font-bold">VINCENT LUIS R. NUEVA ESPAÑA</span>, a passionate BS Computer Science student and Data Scientist from Mapúa Malayan Colleges Laguna. I specialize in creating efficient solutions for complex problems and deriving meaningful insights from data.
+              </p>
+              <p className="mb-4 text-lg">
+                With a strong foundation in both programming and data analysis, I enjoy working on projects that combine technical challenges with analytical thinking. My goal is to use technology to make data more accessible and actionable.
+              </p>
+              <p className="text-lg">
+                I'm constantly learning new technologies and methodologies to stay current with industry trends and best practices. I believe in the power of clean code, user-centered design, and data-driven decision making.
               </p>
             </div>
           </div>

@@ -9,7 +9,7 @@ export default function Hero() {
           Vincent Luis R. Nueva España
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-6">
-          Aspiring Data Scientist with experience in AI, mobile development, and system integration.
+          Medical Research & Data Scientist. I am a Computer Science student and software developer with a strong passion for medical research, and data analysis. My expertise lies in building intelligent systems and integrating large language models into practical applications particularly web-based platforms that enhance user experience, automate tasks, and support data-driven healthcare research..
         </p>
         <div className="cta-buttons flex gap-4">
           <a href="#projects" className="btn btn-primary">View My Work</a>
