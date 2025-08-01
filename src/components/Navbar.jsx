@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 export default function Navbar() {
@@ -13,8 +13,37 @@ export default function Navbar() {
     setIsMenuOpen(false)
   }
 
-  const isActive = (path) => {
-    return location.pathname === path ? 'text-primary' : ''
+  // For scrollspy on homepage
+  const [activeSection, setActiveSection] = useState('home')
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      const handleScroll = () => {
+        const sections = ['home', 'about', 'projects', 'certifications', 'practicum', 'contact']
+        let found = 'home'
+        for (const id of sections) {
+          const el = document.getElementById(id)
+          if (el) {
+            const rect = el.getBoundingClientRect()
+            if (rect.top <= 80 && rect.bottom > 80) {
+              found = id
+              break
+            }
+          }
+        }
+        setActiveSection(found)
+      }
+      window.addEventListener('scroll', handleScroll)
+      handleScroll()
+      return () => window.removeEventListener('scroll', handleScroll)
+    }
+  }, [location.pathname])
+
+  const isActive = (path, section) => {
+    if (location.pathname === '/') {
+      return activeSection === section ? 'text-primary font-semibold underline underline-offset-8' : ''
+    }
+    return location.pathname === path ? 'text-primary font-semibold underline underline-offset-8' : ''
   }
 
   return (
@@ -27,32 +56,22 @@ export default function Navbar() {
 
           <ul className="hidden md:flex items-center space-x-8">
             <li>
-              <Link to="/about" className={`hover:text-primary transition-colors ${isActive('/about')}`}>
-                About
-              </Link>
+              <Link to="/" className={`hover:text-primary transition-colors ${isActive('/', 'home')}`}>Home</Link>
             </li>
             <li>
-              <Link to="/projects" className={`hover:text-primary transition-colors ${isActive('/projects')}`}>
-                Projects
-              </Link>
+              <Link to="/about" className={`hover:text-primary transition-colors ${isActive('/about', 'about')}`}>About</Link>
             </li>
             <li>
-              <Link
-                to="/certifications"
-                className={`hover:text-primary transition-colors ${isActive('/certifications')}`}
-              >
-                Certifications
-              </Link>
+              <Link to="/projects" className={`hover:text-primary transition-colors ${isActive('/projects', 'projects')}`}>Projects</Link>
             </li>
             <li>
-              <Link to="/practicum" className={`hover:text-primary transition-colors ${isActive('/practicum')}`}>
-                Practicum
-              </Link>
+              <Link to="/certifications" className={`hover:text-primary transition-colors ${isActive('/certifications', 'certifications')}`}>Certifications</Link>
             </li>
             <li>
-              <Link to="/contact" className={`hover:text-primary transition-colors ${isActive('/contact')}`}>
-                Contact
-              </Link>
+              <Link to="/practicum" className={`hover:text-primary transition-colors ${isActive('/practicum', 'practicum')}`}>Practicum</Link>
+            </li>
+            <li>
+              <Link to="/contact" className={`hover:text-primary transition-colors ${isActive('/contact', 'contact')}`}>Contact</Link>
             </li>
           </ul>
 
@@ -80,41 +99,12 @@ export default function Navbar() {
         }`}
       >
         <div className="container mx-auto px-4 py-4 space-y-4">
-          <Link
-            to="/about"
-            className={`block hover:text-primary transition-colors ${isActive('/about')}`}
-            onClick={closeMenu}
-          >
-            About
-          </Link>
-          <Link
-            to="/projects"
-            className={`block hover:text-primary transition-colors ${isActive('/projects')}`}
-            onClick={closeMenu}
-          >
-            Projects
-          </Link>
-          <Link
-            to="/certifications"
-            className={`block hover:text-primary transition-colors ${isActive('/certifications')}`}
-            onClick={closeMenu}
-          >
-            Certifications
-          </Link>
-          <Link
-            to="/practicum"
-            className={`block hover:text-primary transition-colors ${isActive('/practicum')}`}
-            onClick={closeMenu}
-          >
-            Practicum
-          </Link>
-          <Link
-            to="/contact"
-            className={`block hover:text-primary transition-colors ${isActive('/contact')}`}
-            onClick={closeMenu}
-          >
-            Contact
-          </Link>
+          <Link to="/" className={`block hover:text-primary transition-colors ${isActive('/', 'home')}`} onClick={closeMenu}>Home</Link>
+          <Link to="/about" className={`block hover:text-primary transition-colors ${isActive('/about', 'about')}`} onClick={closeMenu}>About</Link>
+          <Link to="/projects" className={`block hover:text-primary transition-colors ${isActive('/projects', 'projects')}`} onClick={closeMenu}>Projects</Link>
+          <Link to="/certifications" className={`block hover:text-primary transition-colors ${isActive('/certifications', 'certifications')}`} onClick={closeMenu}>Certifications</Link>
+          <Link to="/practicum" className={`block hover:text-primary transition-colors ${isActive('/practicum', 'practicum')}`} onClick={closeMenu}>Practicum</Link>
+          <Link to="/contact" className={`block hover:text-primary transition-colors ${isActive('/contact', 'contact')}`} onClick={closeMenu}>Contact</Link>
         </div>
       </div>
     </nav>
