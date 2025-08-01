@@ -7,6 +7,7 @@ import About from './components/About'
 import Projects from './components/Projects'
 import Certifications from './pages/Certifications'
 import Practicum from './components/Practicum'
+import Skills from './components/Skills'
 import Contact from './pages/Contact'
 
 function App() {
