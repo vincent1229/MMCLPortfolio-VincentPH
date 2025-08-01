@@ -1,71 +1,74 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
+    <section id="hero" className="relative isolate overflow-hidden bg-white">
+      <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+        <motion.div 
+          className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-8"
+          transition={{ duration: 0.6 }}
         >
-          {/* Profile Image */}
+          <div className="mt-24 sm:mt-32 lg:mt-16">
+            <motion.a 
+              href="#about" 
+              className="inline-flex space-x-6"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <span className="rounded-full bg-blue-600/10 px-3 py-1 text-sm font-semibold leading-6 text-blue-600 ring-1 ring-inset ring-blue-600/10">
+                Computer Science & Data Analyst
+              </span>
+            </motion.a>
+          </div>
+          
           <motion.div
-            className="relative w-32 h-32 mx-auto mb-8"
+            className="relative w-32 h-32 mx-auto my-8 lg:mx-0"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
             <img
               src="/vincentimage.png"
-              alt="Profile"
+              alt="Vincent PH"
               className="rounded-full object-cover w-full h-full shadow-lg"
             />
           </motion.div>
 
-          {/* Title */}
-          <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-gray-900"
+          <motion.h1 
+            className="mt-10 text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Computer Science & Data Analyst
+            Hi, I'm Vincent PH
           </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            className="mt-6 text-xl text-gray-600 max-w-2xl mx-auto"
+          
+          <motion.p 
+            className="mt-6 text-lg leading-8 text-slate-600"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Passionate about creating innovative solutions and analyzing complex data
-            to drive meaningful insights.
+            A passionate computer science student and data analyst focused on creating innovative solutions
+            and analyzing complex data to drive meaningful insights.
           </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            className="mt-8 flex justify-center gap-4 flex-wrap"
+          
+          <motion.div 
+            className="mt-10 flex items-center gap-x-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <a
-              href="#projects"
-              className="px-8 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
-            >
+            <a href="#projects" className="btn btn-primary">
               View My Work
             </a>
-            <a
-              href="#contact"
-              className="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:border-blue-600 hover:text-blue-600 transition-colors"
-            >
-              Get in Touch
+            <a href="#contact" className="btn btn-outline">
+              Contact Me
             </a>
           </motion.div>
         </motion.div>
       </div>
     </section>
-  );
+  )
 }
