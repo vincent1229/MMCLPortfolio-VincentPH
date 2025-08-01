@@ -4,22 +4,23 @@
 
 @layer base {
   :root {
-    /* Color system inspired by jonard-francisco.vercel.app */
-    --color-primary: 37 99 235;    /* blue-600 */
-    --color-secondary: 79 70 229;   /* indigo-600 */
-    --color-accent: 147 51 234;     /* purple-600 */
-    --color-neutral: 71 85 105;     /* slate-600 */
-    
+    /* Café-inspired color palette */
+    --color-primary: 111 78 55;      /* coffee brown */
+    --color-secondary: 205 170 125;  /* light wood beige */
+    --color-accent: 181 136 99;      /* medium wood */
+    --color-neutral: 120 94 62;      /* dark roast */
+
     /* Background colors */
-    --color-background: 255 255 255;  /* white */
-    --color-surface: 248 250 252;     /* slate-50 */
+    --color-background: 245 236 224;   /* cream */
+    --color-surface: 255 250 240;      /* light cream */
     
     /* Text colors */
-    --color-text: 15 23 42;           /* slate-900 */
-    --color-text-muted: 71 85 105;    /* slate-600 */
+    --color-text: 60 40 30;            /* deep brown */
+    --color-text-muted: 120 94 62;     /* muted brown */
     
+
     /* Border colors */
-    --color-border: 226 232 240;      /* slate-200 */
+    --color-border: 205 170 125;       /* light wood beige */
   }
 
   /* Typography */
