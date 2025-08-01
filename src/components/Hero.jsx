@@ -12,8 +12,18 @@ export default function Hero() {
           Medical Research & Data Scientist. I am a Computer Science student and software developer with a strong passion for medical research, and data analysis. My expertise lies in building intelligent systems and integrating large language models into practical applications particularly web-based platforms that enhance user experience, automate tasks, and support data-driven healthcare research..
         </p>
         <div className="cta-buttons flex gap-4">
-          <a href="#projects" className="btn btn-primary">View My Work</a>
-          <Link to="/contact" className="btn btn-secondary">Get In Touch</Link>
+          <a
+            href="#projects"
+            className="btn btn-primary transition-colors duration-200 ease-in-out shadow-md hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          >
+            View My Work
+          </a>
+          <Link
+            to="/contact"
+            className="btn btn-secondary transition-colors duration-200 ease-in-out shadow-md hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          >
+            Get In Touch
+          </Link>
           <a
             href="/CVResume.pdf"
             download
