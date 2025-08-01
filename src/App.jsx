@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import './App.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import './styles/modern-theme.css';
 
 // Animation variants for smooth transitions
-const pageTransition = {
-  initial: { opacity: 0, x: -20 },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: 20 },
-  transition: { duration: 0.5, ease: "easeInOut" }
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
 };
 
 // Certification Card Component
