@@ -2,6 +2,43 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 
+// Animation variants for smooth transitions
+const pageTransition = {
+  initial: { opacity: 0, x: -20 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 20 },
+  transition: { duration: 0.5, ease: "easeInOut" }
+};
+
+// Certification Card Component
+function CertificationCard({ title, issuer, date, icon, badge }) {
+  return (
+    <div className="cert-card" data-scroll>
+      <div className="cert-icon">{icon}</div>
+      <h3>{title}</h3>
+      <p>{issuer} • {date}</p>
+      <div className="cert-badge">{badge}</div>
+    </div>
+  );
+}
+
+// Certifications Section Component
+function CertificationsSection() {
+  return (
+    <motion.section
+      {...pageTransition}
+      className="section-card"
+    >
+      <h2>Certifications</h2>
+      <div className="certifications-grid">
+        {CERTIFICATIONS.map((cert, index) => (
+          <CertificationCard key={index} {...cert} />
+        ))}
+      </div>
+    </motion.section>
+  );
+}
+
 function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -30,10 +67,60 @@ function ContactForm() {
   );
 }
 
+// Navigation tabs configuration
 const TABS = [
+  { key: 'home', label: 'Home' },
   { key: 'about', label: 'About' },
-  { key: 'projects', label: 'Projects' },
   { key: 'skills', label: 'Skills' },
+  { key: 'projects', label: 'Projects' },
+  { key: 'certifications', label: 'Certifications' },
+  { key: 'contact', label: 'Get in Touch' },
+];
+
+// Certifications data
+const CERTIFICATIONS = [
+  {
+    title: "CompTIA Strata IT Fundamentals",
+    issuer: "CompTIA",
+    date: "2024",
+    icon: "🏆",
+    badge: "CompTIA Certified"
+  },
+  {
+    title: "Simple Blade Seminar",
+    issuer: "Aurotech",
+    date: "2025",
+    icon: "⚔️",
+    badge: "Aurotech Certified"
+  },
+  {
+    title: "Microsoft Season of AI",
+    issuer: "Microsoft",
+    date: "2025",
+    icon: "🤖",
+    badge: "Microsoft Certified"
+  },
+  {
+    title: "Employability Skills - Job Ready",
+    issuer: "Wadwhani Foundation",
+    date: "2025",
+    icon: "💼",
+    badge: "Wadhwani Certified"
+  },
+  {
+    title: "TOEIC Speaking and Writing",
+    issuer: "TOEIC",
+    date: "2025",
+    icon: "🗣️",
+    badge: "TOEIC Certified"
+  },
+  {
+    title: "TOEIC Listening and Reading",
+    issuer: "TOEIC",
+    date: "2025",
+    icon: "👂",
+    badge: "TOEIC Certified"
+  }
 ];
 
 function App() {
@@ -64,25 +151,37 @@ function App() {
         </nav>
         <div className="dashboard-content">
           <AnimatePresence mode="wait">
+            {tab === 'home' && (
+              <motion.section
+                {...pageTransition}
+                className="section-card"
+              >
+                <h2>Welcome! 👋</h2>
+                <p className="hero-text">
+                  I'm Vincent, a Computer Science student and aspiring Data Scientist passionate about transforming ideas into impactful solutions.
+                </p>
+                <div className="hero-cta">
+                  <button onClick={() => setTab('about')} className="cta-button">Learn More</button>
+                </div>
+              </motion.section>
+            )}
             {tab === 'about' && (
-            <motion.section
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 20 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              <h2>About Me</h2>
-              <p>
-                I am a fourth-year Computer Science student at Mapúa Malayan Colleges Laguna and currently a practicum intern at STMicroelectronics Calamba under the New Product Introduction (NPI) department. My work involves hands-on experience in semiconductor operations, full-stack web development, SQL-based data automation, inventory and lot management, and system deployment such as the Electronic Inspection Checklist (EIC).
-              </p>
-              <p>
-                With a strong passion for data science and intelligent systems, I co-developed AINA, an AI-powered assistant that integrates machine learning, natural language processing, and voice interfaces for real-world healthcare applications. I previously served as Treasurer of the Junior Philippine Computer Society (JPCS) – MCL Chapter and played for Warlocks, the official esports team of Mapúa MCL, where I developed both leadership and teamwork skills. I also graduated with High Honors during my senior high school years at Mapúa MCL.
-              </p>
-              <p>
-                I am committed to transforming academic knowledge into impactful solutions that blend technology with human-centered design, and I continually strive to grow as a future data scientist and software engineer.
-              </p>
-              <h3>Achievements & Experience</h3>
-              <ul className="vw-achievements-list">
+              <motion.section
+                {...pageTransition}
+                className="section-card"
+              >
+                  <h2>About Me</h2>
+                <p>
+                  I am a fourth-year Computer Science student at Mapúa Malayan Colleges Laguna and currently a practicum intern at STMicroelectronics Calamba under the New Product Introduction (NPI) department. My work involves hands-on experience in semiconductor operations, full-stack web development, SQL-based data automation, inventory and lot management, and system deployment such as the Electronic Inspection Checklist (EIC).
+                </p>
+                <p>
+                  With a strong passion for data science and intelligent systems, I co-developed AINA, an AI-powered assistant that integrates machine learning, natural language processing, and voice interfaces for real-world healthcare applications. I previously served as Treasurer of the Junior Philippine Computer Society (JPCS) – MCL Chapter and played for Warlocks, the official esports team of Mapúa MCL, where I developed both leadership and teamwork skills. I also graduated with High Honors during my senior high school years at Mapúa MCL.
+                </p>
+                <p>
+                  I am committed to transforming academic knowledge into impactful solutions that blend technology with human-centered design, and I continually strive to grow as a future data scientist and software engineer.
+                </p>
+                <h3>Achievements & Experience</h3>
+                <ul className="vw-achievements-list">
                 <li>
                   <strong>OJT at STMicroelectronics Calamba (324 hours):</strong> Contributed to real-world projects in semiconductor operations and system automation under the New Product Introduction (NPI) department.
                 </li>
@@ -114,10 +213,13 @@ function App() {
                   <strong>Esports:</strong> Former player for the Warlocks, Mapúa MCL esports team, representing the school in competitive gaming events.
                 </li>
               </ul>
-            </section>
+            </motion.section>
           )}
           {tab === 'projects' && (
-            <section>
+            <motion.section
+              {...pageTransition}
+              className="section-card"
+            >
               <h2>Featured Projects</h2>
               <div className="projects-grid-blue">
                 {/* Project 1 */}
@@ -143,10 +245,16 @@ function App() {
                   </div>
                 </div>
               </div>
-            </section>
+            </motion.section>
+          )}
+          {tab === 'certifications' && (
+            <CertificationsSection />
           )}
           {tab === 'skills' && (
-            <section>
+            <motion.section
+              {...pageTransition}
+              className="section-card"
+            >
               <h2>Skills</h2>
               <div className="vw-skills-categories">
                 <div className="vw-skill-category">
@@ -222,8 +330,9 @@ function App() {
                   </ul>
                 </div>
               </div>
-            </section>
+            </motion.section>
           )}
+          </AnimatePresence>
         </div>
         <div className="dashboard-footer">
           <h3>Contact</h3>
