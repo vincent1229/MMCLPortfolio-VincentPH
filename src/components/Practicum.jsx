@@ -7,7 +7,15 @@ function Practicum() {
         <h2 className="text-4xl font-display font-bold text-center mb-12 animate-fade-in">
           Practicum Experience
         </h2>
-        <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-lg p-8 animate-slide-up">
+        <div className="flex justify-center mb-10">
+          <img
+            src="/st.jpg"
+            alt="Practicum Group Photo"
+            className="w-full max-w-3xl rounded-xl shadow-md object-cover"
+            style={{ aspectRatio: '16/7' }}
+          />
+        </div>
+        <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-lg p-8 animate-slide-up mt-6">
           <h3 className="text-2xl font-bold mb-4">Narrative Report</h3>
           <p className="text-muted-foreground mb-6">
             Download my comprehensive practicum narrative report to learn about my hands-on experience
