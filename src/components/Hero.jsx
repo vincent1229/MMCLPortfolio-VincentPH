@@ -14,6 +14,13 @@ export default function Hero() {
         <div className="cta-buttons flex gap-4">
           <a href="#projects" className="btn btn-primary">View My Work</a>
           <Link to="/contact" className="btn btn-secondary">Get In Touch</Link>
+          <a
+            href="/CV-Resume.pdf"
+            download
+            className="btn btn-accent"
+          >
+            Download CV
+          </a>
         </div>
       </div>
     </section>
