@@ -11,7 +11,7 @@ function Practicum() {
           <h3 className="text-2xl font-bold mb-4">Narrative Report</h3>
           <p className="text-muted-foreground mb-6">
             Download my comprehensive practicum narrative report to learn about my hands-on experience
-            and professional development during the internship period.
+            and professional development during the internship period in STMicroelectronics Inc. Calamba.
           </p>
           <div className="space-y-4">
             {/* Add a download button for the narrative report */}
