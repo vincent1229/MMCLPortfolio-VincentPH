@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   css: {
-    postcss: './postcss.config.cjs'
+    postcss: true // Let Vite auto-detect the config file
   }
 })
