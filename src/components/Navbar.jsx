@@ -67,6 +67,9 @@ export default function Navbar() {
               <Link to="/projects" className={`hover:text-primary transition-colors ${isActive('/projects', 'projects')}`}>Projects</Link>
             </li>
             <li>
+              <Link to="/skills" className={`hover:text-primary transition-colors ${isActive('/skills', 'skills')}`}>Skills</Link>
+            </li>
+            <li>
               <Link to="/certifications" className={`hover:text-primary transition-colors ${isActive('/certifications', 'certifications')}`}>Certifications</Link>
             </li>
             <li>
@@ -104,6 +107,7 @@ export default function Navbar() {
           <Link to="/" className={`block hover:text-primary transition-colors ${isActive('/', 'home')}`} onClick={closeMenu}>Home</Link>
           <Link to="/about" className={`block hover:text-primary transition-colors ${isActive('/about', 'about')}`} onClick={closeMenu}>About</Link>
           <Link to="/projects" className={`block hover:text-primary transition-colors ${isActive('/projects', 'projects')}`} onClick={closeMenu}>Projects</Link>
+          <Link to="/skills" className={`block hover:text-primary transition-colors ${isActive('/skills', 'skills')}`} onClick={closeMenu}>Skills</Link>
           <Link to="/certifications" className={`block hover:text-primary transition-colors ${isActive('/certifications', 'certifications')}`} onClick={closeMenu}>Certifications</Link>
           <Link to="/practicum" className={`block hover:text-primary transition-colors ${isActive('/practicum', 'practicum')}`} onClick={closeMenu}>Practicum</Link>
           <Link to="/contact" className={`block hover:text-primary transition-colors ${isActive('/contact', 'contact')}`} onClick={closeMenu}>Contact</Link>
