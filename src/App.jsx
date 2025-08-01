@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 
 function ContactForm() {
@@ -62,8 +63,14 @@ function App() {
           ))}
         </nav>
         <div className="dashboard-content">
-          {tab === 'about' && (
-            <section>
+          <AnimatePresence mode="wait">
+            {tab === 'about' && (
+            <motion.section
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
               <h2>About Me</h2>
               <p>
                 I am a fourth-year Computer Science student at Mapúa Malayan Colleges Laguna and currently a practicum intern at STMicroelectronics Calamba under the New Product Introduction (NPI) department. My work involves hands-on experience in semiconductor operations, full-stack web development, SQL-based data automation, inventory and lot management, and system deployment such as the Electronic Inspection Checklist (EIC).

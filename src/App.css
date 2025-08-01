@@ -1,3 +1,26 @@
+/* Icon styles for NutriTrack and Aina project cards */
+.vw-project-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 1.2rem;
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 0 24px #ff8ae2cc;
+  margin-bottom: 1rem;
+  font-size: 3.2rem;
+  color: #01cdfe;
+  transition: color 0.2s, box-shadow 0.2s;
+}
+.vw-project-card:hover .vw-project-icon {
+  color: #ff71ce;
+  box-shadow: 0 0 32px #ff71ce88;
+}
+.vw-project-icon.phone {
+}
+.vw-project-icon.tablet {
+
 /* --- Dashboard Layout Styles --- */
 .dashboard-bg {
   min-height: 100vh;
@@ -9,9 +32,9 @@
   font-family: 'Tungsten', 'Orbitron', Arial, sans-serif;
 }
 .dashboard-container {
-  background: rgba(255,255,255,0.18);
+  background: rgba(40, 0, 80, 0.5);
   border-radius: 2rem;
-  box-shadow: 0 8px 48px 0 #3ec6ff55, 0 0 0 2px #1976d255;
+  box-shadow: 0 8px 48px 0 #ff8ae288, 0 0 0 2px #a890fe;
   max-width: 700px;
   width: 100%;
   padding: 2.5rem 2rem 2rem 2rem;
@@ -20,6 +43,7 @@
   align-items: center;
   position: relative;
   backdrop-filter: blur(16px) saturate(180%);
+  border: 2px solid #a890fe;
 }
 .dashboard-header {
   display: flex;
@@ -52,17 +76,19 @@
 }
 .dashboard-title {
   font-family: 'Tungsten Bold', 'Tungsten', Arial, sans-serif;
-  font-size: 2.2rem;
-  color: #1976d2;
+  font-size: 2.5rem;
+  color: #ff8ae2;
   margin: 0 0 0.2rem 0;
   letter-spacing: 2px;
+  text-shadow: 0 0 8px #a890fe, 0 0 16px #ff8ae2;
+  font-weight: 700;
 }
 .dashboard-tagline {
   font-family: 'VT323', 'Orbitron', Arial, sans-serif;
-  font-size: 1.1rem;
-  color: #01cdfe;
+  font-size: 1.2rem;
+  color: #05ffa1;
   margin: 0;
-  text-shadow: 0 0 6px #3ec6ff44;
+  text-shadow: 0 0 6px #a890fe;
 }
 .dashboard-tabs {
   display: flex;
@@ -70,20 +96,85 @@
   margin-bottom: 2rem;
   width: 100%;
   justify-content: center;
+  position: relative;
+  perspective: 1000px;
 }
+
+/* Tab animation and modern styling */
 .dashboard-tab {
-  background: none;
-  border: none;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid #a890fe44;
   font-family: 'Tungsten Bold', 'Tungsten', Arial, sans-serif;
   font-size: 1.1rem;
-  color: #1976d2;
+  color: #01cdfe;
   padding: 0.7rem 2.2rem;
   border-radius: 0.7rem;
   cursor: pointer;
-  box-shadow: 0 0 0 0 #3ec6ff44;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  transform-style: preserve-3d;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  outline: none;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.dashboard-tab::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #ff71ce, #01cdfe);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dashboard-tab span {
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-tab:hover {
+  transform: translateY(-2px);
+  border-color: #ff71ce;
+}
+
+.dashboard-tab.active {
+  background: linear-gradient(90deg, #ff71ce, #01cdfe);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 10px 30px -10px #ff71ce88;
+  transform: translateY(-2px);
+}
+
+/* Section container cards with animations */
+.section-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 1.2rem;
+  border: 2px solid #a890fe44;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px -8px rgba(0,0,0,0.1);
+}
+
+.section-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.section-card:hover {
+  border-color: #ff71ce;
+  box-shadow: 0 15px 40px -10px #ff71ce44;
+}
+.dashboard-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 24px #ff8ae2cc;
+  background: url('/vincentimage.png') center center/cover no-repeat;
+
 }
 .dashboard-tab.active, .dashboard-tab:hover {
   background: linear-gradient(90deg, #3ec6ff, #1976d2, #01cdfe);
@@ -131,6 +222,7 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
 @font-face {
   font-family: 'Tungsten Bold';
   src: url('/fonts/Tungsten-Bold.woff2') format('woff2'),
@@ -151,13 +243,9 @@
   backdrop-filter: blur(12px) saturate(180%);
   border-bottom: 2px solid #3ec6ff44;
   box-shadow: 0 2px 24px 0 #1976d233;
-  border-radius: 0 0 1.5rem 1.5rem;
-  margin-bottom: 2rem;
-/* removed stray properties */
-.vw-navbar-links a:hover {
-  color: #01cdfe;
-  text-shadow: 0 0 8px #3ec6ff, 0 0 2px #fff;
-.vw-navbar-links a:hover::after {
+}
+/* Removed orphaned properties after .dashboard-avatar-img */
+/* Removed stray closing braces */
   width: 100%;
 
 /* Hero Section Modernization */
@@ -284,34 +372,45 @@
 .vw-project-card {
   background: rgba(30, 60, 120, 0.95);
   border-radius: 1.2rem;
-  box-shadow: 0 2px 24px 0 #3ec6ff33, 0 0 0 2px #1976d233;
-  border: 1.5px solid #3ec6ff;
-  padding: 1.5rem 1.2rem;
+  box-shadow: 0 2px 24px 0 #3ec6ff33;
+  border: 2px solid #a890fe44;
+  padding: 1.8rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s;
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(10px);
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.vw-project-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.vw-project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff71ce22, #01cdfe22);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.vw-project-card > * {
+  position: relative;
+  z-index: 1;
 }
 .vw-project-card:hover {
   transform: translateY(-10px) scale(1.03);
   box-shadow: 0 8px 48px 0 #3ec6ff55, 0 0 0 2px #1976d255;
 }
 .vw-project-img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-bottom: 1rem;
-  filter: drop-shadow(0 0 12px #3ec6ff88);
-}
-}
-.vw-project-tags {
-  margin-top: 0.7rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
+  /* ...existing code... */
 .vw-project-card:hover .vw-project-tags span {
   background: linear-gradient(90deg, #01cdfe, #1976d2, #3ec6ff);
 }
@@ -322,10 +421,6 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 }
-  color: #1976d2;
-  font-family: 'Tungsten Bold', 'Tungsten', Arial, sans-serif;
-  font-size: 1.1rem;
-  margin-bottom: 0.7rem;
 }
 .vw-skill-list {
   list-style: none;
@@ -349,18 +444,39 @@
 .vw-contact-form {
   background: rgba(30, 60, 120, 0.95);
   border-radius: 1.2rem;
-  box-shadow: 0 2px 24px 0 #3ec6ff33, 0 0 0 2px #1976d233;
-  border: 1.5px solid #3ec6ff;
+  box-shadow: 0 2px 24px 0 #3ec6ff33;
+  border: 2px solid #a890fe44;
   padding: 2rem 1.5rem;
   margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  transition: all 0.3s ease;
+  transform: scale(0.98);
+  backdrop-filter: blur(10px);
 }
-  color: #1976d2;
-  font-family: 'Tungsten Bold', 'Tungsten', Arial, sans-serif;
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
+
+.vw-contact-form:hover,
+.vw-contact-form:focus-within {
+  border-color: #ff71ce;
+  transform: scale(1);
+  box-shadow: 0 15px 40px -10px #ff71ce44;
+}
+
+/* Smooth scroll behavior and scroll animations */
+html {
+  scroll-behavior: smooth;
+}
+
+[data-scroll] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-scroll].scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .vw-input {
   width: 100%;
@@ -385,7 +501,7 @@
   background: linear-gradient(90deg, #01cdfe, #1976d2, #3ec6ff);
   box-shadow: 0 0 32px #3ec6ff88;
   transform: scale(1.04);
-}
+
 
 /* Contact List Modernization */
 .vw-contact-list {
@@ -498,11 +614,38 @@ html {
 .vw-section {
   background: rgba(40, 0, 80, 0.5);
   border-radius: 24px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   padding: 2rem 1.5rem;
   box-shadow: 0 4px 32px 0 rgba(255, 138, 226, 0.15);
   border: 2px solid #a890fe;
   color: #111;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vw-section.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.vw-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, #ff71ce22, #01cdfe22);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vw-section:hover::before {
+  opacity: 1;
 }
 .vw-section h2 {
   font-family: 'Orbitron', 'Press Start 2P', cursive;
