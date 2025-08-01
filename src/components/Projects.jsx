@@ -1,96 +1,69 @@
-import { motion } from 'framer-motion'
-
-const projects = [
-  {
-    name: 'Data Analysis Portfolio',
-    description: 'Collection of data analysis projects using Python, Pandas, and visualization tools.',
-    tech: ['Python', 'Pandas', 'Matplotlib', 'Jupyter'],
-    github: '#',
-    demo: '#',
-  },
-  {
-    name: 'Web Development Projects',
-    description: 'Modern web applications built with React and TailwindCSS.',
-    tech: ['React', 'TailwindCSS', 'Node.js', 'MongoDB'],
-    github: '#',
-    demo: '#',
-  },
-  {
-    name: 'Machine Learning Experiments',
-    description: 'Various ML models and experiments for data prediction and classification.',
-    tech: ['Python', 'Scikit-learn', 'TensorFlow', 'Jupyter'],
-    github: '#',
-    demo: '#',
-  },
-]
-
 export default function Projects() {
-  return (
-    <section id="projects" className="section bg-slate-50">
-      <div className="container-wide">
-        <motion.div
-          className="max-w-2xl"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Projects</h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            A selection of projects that showcase my skills in data analysis, web development,
-            and machine learning.
-          </p>
-        </motion.div>
+  const projects = [
+    {
+      title: "Data Analysis Dashboard",
+      description: "Interactive dashboard built with Python and Streamlit for visualizing business metrics and KPIs.",
+      tech: ["Python", "Streamlit", "Pandas", "Plotly"],
+      link: "#"
+    },
+    {
+      title: "E-commerce Website",
+      description: "Full-stack e-commerce platform with React frontend and Node.js backend, featuring user authentication and payment integration.",
+      tech: ["React", "Node.js", "MongoDB", "Stripe"],
+      link: "#"
+    },
+    {
+      title: "Machine Learning Model",
+      description: "Predictive model for customer churn analysis using scikit-learn with 94% accuracy on test data.",
+      tech: ["Python", "Scikit-learn", "Jupyter", "Matplotlib"],
+      link: "#"
+    }
+  ]
 
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+  return (
+    <section id="projects" className="section bg-gray-50">
+      <div className="container">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Featured Projects
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            Some of the projects I've worked on recently
+          </p>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <motion.article
-              key={project.name}
-              className="card p-6 flex flex-col items-start justify-between"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <div className="relative w-full">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                  {project.name}
+            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-600"></div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {project.title}
                 </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                <p className="text-gray-600 mb-4">
                   {project.description}
                 </p>
-              </div>
-              
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              
-              <div className="mt-8 flex items-center gap-x-4">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
                 <a
-                  href={project.github}
-                  className="btn btn-outline !px-3 !py-1.5 text-sm"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={project.link}
+                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                 >
-                  View Code
-                </a>
-                <a
-                  href={project.demo}
-                  className="btn btn-primary !px-3 !py-1.5 text-sm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live Demo
+                  View Project
+                  <svg className="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
                 </a>
               </div>
-            </motion.article>
+            </div>
           ))}
         </div>
       </div>

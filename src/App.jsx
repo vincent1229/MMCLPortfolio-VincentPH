@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -5,7 +6,6 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
-import './styles/theme.css'
 
 function App() {
   useEffect(() => {
@@ -13,15 +13,19 @@ function App() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault()
-        document.querySelector(this.getAttribute('href'))?.scrollIntoView({
-          behavior: 'smooth'
-        })
+        const target = document.querySelector(this.getAttribute('href'))
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        }
       })
     })
   }, [])
 
   return (
-    <div className="bg-white">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <main>
         <Hero />
@@ -30,9 +34,9 @@ function App() {
         <Projects />
         <Contact />
       </main>
-      <footer className="bg-slate-900 text-white py-8">
-        <div className="container-wide text-center">
-          <p className="text-sm text-slate-400">
+      <footer className="bg-gray-900 text-white py-8">
+        <div className="container text-center">
+          <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} Vincent PH. All rights reserved.
           </p>
         </div>

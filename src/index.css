@@ -1,0 +1,53 @@
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+    :root {
+      --color-primary: 59 130 246;
+      --color-secondary: 99 102 241;
+      --color-accent: 139 92 246;
+      --color-neutral: 100 116 139;
+      --color-background: 255 255 255;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      @apply font-sans antialiased text-gray-900 bg-white;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0;<<<<<<< HEAD
+/* Your changes */
+=======
+/* Incoming changes */
+>>>>>>> commitID
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  @layer components {
+    .container {
+      @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .section {
+      @apply py-16 lg:py-24;
+    }
+
+    .btn-primary {
+      @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200;
+    }
+
+    .btn-secondary {
+      @apply inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200;
+    }
+  }
