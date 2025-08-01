@@ -3,28 +3,24 @@ import React from 'react'
 export default function Projects() {
   const projects = [
     {
-      title: "Data Analysis Dashboard",
-      description: "Interactive dashboard built with Python and Streamlit for visualizing business metrics and KPIs. Features real-time data updates and customizable charts.",
-      tech: ["Python", "Streamlit", "Pandas", "Plotly", "PostgreSQL"],
-      link: "#"
+      title: "Personal Portfolio Website",
+      description: "Designed and developed a responsive portfolio website to showcase my projects and skills. Deployed on Vercel for fast and global accessibility.",
+      tech: ["HTML", "CSS", "JavaScript", "Responsive Design", "Vercel"]
     },
     {
-      title: "E-commerce Website",
-      description: "Full-stack e-commerce platform with React frontend and Node.js backend, featuring user authentication, payment integration, and inventory management.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "JWT"],
-      link: "#"
+      title: "AINA: A Personalized Health Recommendation System",
+      description: "Deep learning system for height and weight estimation through image processing, paired with personalized health recommendations using Large Language Models.",
+      tech: ["Python", "Deep Learning", "LLM", "Image Processing", "Computer Vision", "OpenCV"]
     },
     {
-      title: "Machine Learning Model",
-      description: "Predictive model for customer churn analysis using scikit-learn with 94% accuracy on test data. Includes data preprocessing and feature engineering.",
-      tech: ["Python", "Scikit-learn", "Jupyter", "Matplotlib", "Pandas"],
-      link: "#"
+      title: "NutriTrack Mobile App",
+      description: "A mobile application for tracking dietary intake, nutritional content, and key health parameters like sugar and sodium levels.",
+      tech: ["Xamarin", "Mobile Development", "Database", "Health Tech"]
     },
     {
-      title: "Portfolio Website",
-      description: "Modern, responsive portfolio website built with React and Vite. Features smooth animations, mobile-first design, and optimized performance.",
-      tech: ["React", "Vite", "CSS3", "JavaScript", "Responsive Design"],
-      link: "#"
+      title: "Coin and Bills Detection Tool",
+      description: "An educational tool using computer vision to detect coins and bills, designed to promote financial literacy through technological learning.",
+      tech: ["Python", "OpenCV", "Computer Vision", "Educational Tech"]
     }
   ]
 

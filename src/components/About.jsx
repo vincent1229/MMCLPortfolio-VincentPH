@@ -16,7 +16,7 @@ export default function About() {
             />
             <div className="text-left">
               <p className="mb-4 text-lg">
-                Hello! I'm <span className="font-bold">VINCENT LUIS R. NUEVA ESPAÑA</span>, a passionate computer science student and data analyst. I specialize in creating efficient solutions for complex problems and deriving meaningful insights from data.
+                Hello! I'm <span className="font-bold">VINCENT LUIS R. NUEVA ESPAÑA</span>, a passionate BS Computer Science student and data analyst from Mapúa Malayan Colleges Laguna. I specialize in creating efficient solutions for complex problems and deriving meaningful insights from data.
               </p>
               <p className="mb-4 text-lg">
                 With a strong foundation in both programming and data analysis, I enjoy working on projects that combine technical challenges with analytical thinking. My goal is to use technology to make data more accessible and actionable.

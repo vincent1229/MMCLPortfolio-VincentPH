@@ -13,7 +13,7 @@ export default function Contact() {
           <a href="mailto:vincent@example.com" className="contact-link">
             Send Email
           </a>
-          <a href="https://linkedin.com/in/vincentph" target="_blank" rel="noopener noreferrer" className="contact-link">
+          <a href="https://www.linkedin.com/in/vincent-luis-nueva-espa%C3%B1a-955085325" target="_blank" rel="noopener noreferrer" className="contact-link">
             LinkedIn
           </a>
           <a href="https://github.com/vincentph" target="_blank" rel="noopener noreferrer" className="contact-link">
