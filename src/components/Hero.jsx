@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Hero() {
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
         </p>
         <div className="cta-buttons flex gap-4">
           <a href="#projects" className="btn btn-primary">View My Work</a>
-          <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+          <Link to="/contact" className="btn btn-secondary">Get In Touch</Link>
         </div>
       </div>
     </section>
