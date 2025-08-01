@@ -16,10 +16,11 @@ function Practicum() {
           <div className="space-y-4">
             {/* Add a download button for the narrative report */}
             <a
-              href="/documents/practicum/narrative-report.pdf"
+              href="/FinalNarrativeReportNuevaEspana.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+              download
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
