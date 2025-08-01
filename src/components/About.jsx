@@ -8,7 +8,7 @@ export default function About() {
           About Me
         </h2>
         <div className="max-w-3xl mx-auto">
-          <div className="bg-card rounded-lg shadow-lg p-8 flex flex-col md:flex-row items-center gap-8 animate-slide-up">
+          <div className="bg-card rounded-lg shadow-lg p-8 flex flex-col md:flex-row items-center gap-8 animate-slide-up hover:scale-[1.02] transition-transform ease-in-out duration-300">
             <img
               src="/vincentimage.png"
               alt="Vincent Nueva España profile"
