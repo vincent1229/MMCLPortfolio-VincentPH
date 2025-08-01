@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { Glasses } from 'lucide-react'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -50,7 +51,8 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm z-50 border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="text-xl font-bold font-display">
+          <Link to="/" className="flex items-center gap-2 text-xl font-bold font-display">
+            <Glasses className="w-6 h-6 text-primary" />
             Vincent PH
           </Link>
 
