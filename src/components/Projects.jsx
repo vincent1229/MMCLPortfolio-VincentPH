@@ -29,28 +29,34 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects" className="section">
-      <h2>Featured Projects</h2>
-      <div className="projects-grid">
-        {projects.map((project, index) => (
-          <div key={index} className="project-card">
-            <div className="project-image">
-              {project.title.split(' ')[0]}
-            </div>
-            <div className="project-content">
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="project-tags">
-                {project.tech.map((tech, techIndex) => (
-                  <span key={techIndex} className="tag">{tech}</span>
-                ))}
+    <section id="projects" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-display font-bold text-center mb-12 animate-fade-in">
+          Featured Projects
+        </h2>
+        <div className="grid gap-8 max-w-4xl mx-auto">
+          {projects.map((project, index) => (
+            <div key={index} className="bg-card rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center gap-6 animate-slide-up hover:scale-[1.02] transition-transform ease-in-out duration-300">
+              <div className="flex-shrink-0 w-24 h-24 bg-primary/10 rounded-lg flex items-center justify-center text-3xl font-bold text-primary shadow-md">
+                {project.title.split(' ')[0]}
               </div>
-              <a href={project.link} className="project-link">
-                View Project →
-              </a>
+              <div className="flex-1 text-left">
+                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                <p className="mb-3 text-muted-foreground">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-2">
+                  {project.tech.map((tech, techIndex) => (
+                    <span key={techIndex} className="px-2 py-1 bg-primary/10 text-primary rounded text-xs font-semibold">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a href={project.link} className="inline-block mt-2 text-primary font-semibold hover:underline">
+                  View Project →
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )
