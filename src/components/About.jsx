@@ -7,7 +7,7 @@ export default function About() {
       <div className="about-content">
         <div className="about-text">
           <p>
-            Hello! I'm Vincent PH, a passionate computer science student and data analyst. 
+            Hello! I'm VINCENT LUIS R. NUEVA ESPAÑA, a passionate computer science student and data analyst. 
             I specialize in creating efficient solutions for complex problems and deriving 
             meaningful insights from data.
           </p>
