@@ -11,8 +11,9 @@ export default defineConfig({
     hmr: {
       clientPort: 5173,
     },
-    allowedHosts:
-      "2349cfab-389b-4af8-bb36-b56d10b9c576-00-2oqm0hxuwsgio.worf.replit.dev",
+    allowedHosts: [
+      "2349cfab-389b-4af8-bb36-b56d10b9c576-00-2oqm0hxuwsgio.worf.replit.dev"
+    ],
   },
   css: {
     postcss: true,
