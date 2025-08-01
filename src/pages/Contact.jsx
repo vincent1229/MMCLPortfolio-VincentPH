@@ -100,7 +100,7 @@ function Contact() {
                   />
                 </svg>
                 <a
-                  href="YOUR_LINKEDIN_URL"
+                  href="https://www.linkedin.com/in/vincent-luis-nueva-espana/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
