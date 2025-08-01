@@ -1,4 +1,5 @@
 import React from 'react'
+import { Globe, HeartPulse, Smartphone, Coins } from 'lucide-react'
 
 export default function Projects() {
   const projects = [
@@ -33,8 +34,11 @@ export default function Projects() {
         <div className="grid gap-8 max-w-4xl mx-auto">
           {projects.map((project, index) => (
             <div key={index} className="bg-card rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center gap-6 animate-slide-up hover:scale-[1.02] transition-transform ease-in-out duration-300">
-              <div className="flex-shrink-0 w-24 h-24 bg-primary/10 rounded-lg flex items-center justify-center text-3xl font-bold text-primary shadow-md">
-                {project.title.split(' ')[0]}
+              <div className="flex-shrink-0 w-24 h-24 bg-primary/10 rounded-lg flex items-center justify-center text-4xl text-primary shadow-md">
+                {index === 0 && <Globe size={48} />}
+                {index === 1 && <HeartPulse size={48} />}
+                {index === 2 && <Smartphone size={48} />}
+                {index === 3 && <Coins size={48} />}
               </div>
               <div className="flex-1 text-left">
                 <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
@@ -46,9 +50,6 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <a href={project.link} className="inline-block mt-2 text-primary font-semibold hover:underline">
-                  View Project →
-                </a>
               </div>
             </div>
           ))}
