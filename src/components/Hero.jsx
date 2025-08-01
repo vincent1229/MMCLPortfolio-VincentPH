@@ -15,9 +15,9 @@ export default function Hero() {
           <a href="#projects" className="btn btn-primary">View My Work</a>
           <Link to="/contact" className="btn btn-secondary">Get In Touch</Link>
           <a
-            href="/CV-Resume.pdf"
+            href="/CVResume.pdf"
             download
-            className="btn btn-accent"
+            className="btn btn-accent transition-colors duration-200 ease-in-out shadow-md hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           >
             Download CV
           </a>
