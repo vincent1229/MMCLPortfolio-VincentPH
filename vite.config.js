@@ -18,4 +18,8 @@ export default defineConfig({
   css: {
     postcss: true,
   },
+  // Handle client-side routing
+  preview: {
+    port: 5173
+  },
 });
