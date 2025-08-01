@@ -2,8 +2,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import '@fontsource/inter/variable.css'
-import '@fontsource/manrope/variable.css'
+import '@fontsource/inter'
+import '@fontsource/manrope'
 import './theme.css'
 
 
