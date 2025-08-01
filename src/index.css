@@ -1,68 +1,47 @@
 
-:root {
-  font-family: 'Orbitron', 'Press Start 2P', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 59 130 246;
+    --color-secondary: 99 102 241;
+    --color-accent: 139 92 246;
+    --color-neutral: 100 116 139;
+    --color-background: 255 255 255;
+  }
+
+  body {
+    @apply font-sans antialiased text-gray-800;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-html, body {
-  font-family: 'Orbitron', 'Press Start 2P', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background: none;
-  color: inherit;
-}
+@layer components {
+  a {
+    @apply font-medium text-blue-600 no-underline hover:text-blue-700;
+  }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+  body {
+    @apply m-0 min-w-[320px] min-h-screen;
+  }
 
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  h1 {
+    @apply text-5xl leading-tight;
+  }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  button {
+    @apply rounded-lg border border-transparent px-4 py-2 text-base font-medium
+           bg-gray-900 cursor-pointer transition-colors duration-200
+           hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    color: inherit;
-    background: none;
-  }
-  a:hover {
-    color: #747bff;
-  }
   button {
-    background-color: #f9f9f9;
+    @apply bg-gray-100;
   }
 }

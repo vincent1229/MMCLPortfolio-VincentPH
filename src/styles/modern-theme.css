@@ -9,10 +9,25 @@
     --color-accent: 139 92 246;
     --color-neutral: 100 116 139;
     --color-background: 255 255 255;
+    font-family: 'Inter var', 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  @supports (font-variation-settings: normal) {
+    :root {
+      font-family: 'Inter var', system-ui, -apple-system, sans-serif;
+    }
   }
 
   body {
-    @apply bg-white text-gray-800 font-sans;
+    @apply bg-white text-gray-800;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Improve font rendering for headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
   }
 }
 
