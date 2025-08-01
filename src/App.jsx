@@ -1,5 +1,5 @@
-import React from 'react'
-import './App.css'
+import React, { useEffect } from 'react'
+import './styles/theme.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -8,14 +8,28 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 
 function App() {
+  useEffect(() => {
+    // Smooth scroll behavior for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault()
+        document.querySelector(this.getAttribute('href'))?.scrollIntoView({
+          behavior: 'smooth'
+        })
+      })
+    })
+  }, [])
+
   return (
-    <div className="App">
+    <div className="bg-white min-h-screen">
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
     </div>
   )
 }
